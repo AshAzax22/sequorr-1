@@ -1,0 +1,29 @@
+/* What We Believe Section Styles */
+.believeSection {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(60px, 12vw, 120px) 24px;
+}
+
+.believeHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    text-align: center;
+}
+
+.believeContent {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin-top: 40px;
+}
