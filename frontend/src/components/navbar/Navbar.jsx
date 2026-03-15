@@ -5,6 +5,7 @@ import Logo from '../../assets/navbar/logo.svg'
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const navRef = React.useRef(null);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -14,8 +15,21 @@ const Navbar = () => {
         setIsMenuOpen(false);
     };
 
+    React.useEffect(() => {
+        if (!isMenuOpen) return;
+
+        const handleClickOutside = (event) => {
+            if (navRef.current && !navRef.current.contains(event.target)) {
+                setIsMenuOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, [isMenuOpen]);
+
     return (
-        <nav className={`${styles.navbar} ${isMenuOpen ? styles.navActive : ''}`} aria-label="Main Navigation">
+        <nav ref={navRef} className={`${styles.navbar} ${isMenuOpen ? styles.navActive : ''}`} aria-label="Main Navigation">
             <div className={styles.navLogo}>
                 <img src={Logo} alt="Sequorr logo" />
             </div>
