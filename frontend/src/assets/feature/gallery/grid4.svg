@@ -1,0 +1,28 @@
+<svg width="1202" height="1202" viewBox="0 0 1202 1202" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Repeat group 1_inner" data-figma-trr="r24u1-0f">
+<rect x="567.907" y="0.90625" width="66" height="600" rx="6" fill="#2EEE34"/>
+</g>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(176.002 -135.051) rotate(15)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(380.96 -219.947) rotate(30)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(600.907 -248.904) rotate(45)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(820.854 -219.947) rotate(60)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(1025.81 -135.051) rotate(75)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(1201.81 -9.58038e-05) rotate(90)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(1336.86 176.001) rotate(105)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(1421.76 380.96) rotate(120)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(1450.72 600.907) rotate(135)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(1421.76 820.854) rotate(150)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(1336.86 1025.81) rotate(165)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(1201.81 1201.81) rotate(-180)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(1025.81 1336.86) rotate(-165)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(820.854 1421.76) rotate(-150)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(600.907 1450.72) rotate(-135)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(380.96 1421.76) rotate(-120)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(176.002 1336.86) rotate(-105)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(0.000114905 1201.81) rotate(-90)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(-135.051 1025.81) rotate(-75)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(-219.947 820.854) rotate(-60)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(-248.904 600.907) rotate(-45)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(-219.947 380.959) rotate(-30)"/>
+<use xlink:href="#Repeat%20group%201_inner" transform="translate(-135.051 176.001) rotate(-15)"/>
+</svg>

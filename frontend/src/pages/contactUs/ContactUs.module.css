@@ -1,0 +1,206 @@
+/* Contact Us Form Section Styles */
+.contactUsSection {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+.contactUsForm {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  background-color: rgba(var(--primary-green-rgb), 0.1);
+  max-width: 1000px;
+  width: 80%;
+  padding: 28px;
+  border-radius: 12px;
+}
+
+.contactUsIntro {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.formHeading {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.05;
+}
+
+.formDescription {
+  font-size: clamp(14px, 4vw, 20px);
+  line-height: 1.05;
+}
+
+.formContactInfo,
+.formResponseTime {
+  font-size: clamp(13px, 4vw, 18px);
+  line-height: 1.05;
+}
+
+.formResponseTime {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.contactUsFields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2;
+}
+
+.fieldContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.errorSpace {
+  min-height: 24px; /* Reserve space for error messages */
+  display: flex;
+  align-items: center;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 10px 20px;
+  border: 2px solid rgba(var(--primary-green-rgb), 0.2);
+  border-radius: 8px;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  outline: none;
+  transition: border-color 150ms ease;
+}
+
+.input::placeholder,
+.select::placeholder,
+.textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border: 2px solid rgba(var(--primary-green-rgb), 0.8);
+}
+
+.customSelect {
+  position: relative;
+  width: 100%;
+}
+
+.selectHeader {
+  width: 100%;
+  padding: 10px 20px;
+  border: 2px solid rgba(var(--primary-green-rgb), 0.2);
+  border-radius: 8px;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  outline: none;
+  transition: border-color 150ms ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selectDropDownIcon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+
+.selectDropdown {
+  position: absolute;
+  width: 100%;
+  margin-top: 2px;
+  border: 2px solid rgba(var(--primary-green-rgb), 0.2);
+  border-radius: 8px;
+  background: rgba(0, 0, 0);
+  list-style: none;
+  padding: 0;
+  overflow: hidden;
+}
+
+.selectOption {
+  padding: 12px;
+  cursor: pointer;
+}
+
+.selectOption:hover {
+  background: rgba(var(--primary-green-rgb), 0.1);
+}
+
+.textarea {
+  height: 150px;
+  resize: none;
+}
+
+.errorMessage {
+  color: #ff6b6b;
+  font-size: 14px;
+  /* padding: 8px 0; */
+}
+
+.submitButton {
+  width: 100%;
+  padding: 12px;
+  font-size: clamp(13px, 4vw, 16px);
+  border: none;
+  border-radius: 8px;
+  background: rgba(var(--primary-green-rgb), 0.8);
+  color: #0b0b0b;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.submitButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 28px rgba(0, 0, 0, 0.28);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .contactUsSection {
+    padding: 100px 0 0 0;
+  }
+
+  .contactUsForm {
+    grid-template-columns: 1fr;
+  }
+
+  .contactUsIntro {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 450px) {
+  .contactUsSection {
+    padding: 90px 0 0 0;
+  }
+
+  .contactUsForm {
+    grid-template-columns: 1fr;
+  }
+
+  .contactUsIntro {
+    gap: 40px;
+  }
+}
