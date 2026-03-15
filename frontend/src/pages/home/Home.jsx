@@ -5,6 +5,7 @@ import Dither from '../../components/react-bits/dither/Dither'
 import Audience from '../../components/audience/Audience'
 import Movement from '../../components/movement/Movement'
 import Motivation from '../../components/motivation/Motivation'
+import FeaturedBlogs from '../../components/featuredBlogs/FeaturedBlogs'
 import Footer from '../../components/footer/Footer'
 
 const Home = () => {
@@ -103,6 +104,9 @@ const Home = () => {
 
             {/* Motivation Section */}
             <Motivation />
+
+            {/* Featured Blogs Section */}
+            <FeaturedBlogs />
 
             {/* Footer Section */}
             <Footer />

@@ -9,7 +9,7 @@ const Motivation = () => {
     const [activePhase, setActivePhase] = useState('Morning')
     const [activityIndex, setActivityIndex] = useState(0)
 
-    const activities = ['Running', 'Swimming', 'Cycling', 'Yoga', 'HIIT']
+    const activities = ['Running', 'Swimming', 'Cycling', 'Yoga']
 
     const handleNextActivity = () => {
         setActivityIndex((prev) => (prev + 1) % activities.length)

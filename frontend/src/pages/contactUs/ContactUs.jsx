@@ -248,12 +248,17 @@ const ContactUs = () => {
                             <textarea
                                 className={styles.textarea}
                                 name="message"
-                                placeholder="Message"
+                                placeholder="We are excited to hear from you...?"
                                 value={formData.message}
                                 onChange={handleChange}
+                                maxLength="2000"
                             />
+
                             <div className={styles.errorSpace}>
-                                {error.message && <p className={styles.errorMessage}>{error.message}</p>}
+                                <p className={styles.errorMessage} aria-hidden={!error.message}>
+                                    {error.message || '\u00A0'}
+                                </p>
+                                <p className={styles.charCount}>Max 2000 characters</p>
                             </div>
                         </div>
 
