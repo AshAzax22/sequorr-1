@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react'
 import styles from './ContactUs.module.css'
 
+import LightRays from '../../components/react-bits/lightRays/LightRays'
+
 import DropDownArrow from '../../assets/contactUs/arrow.svg'
 import Believe from '../../components/believe/Believe'
 import Footer from '../../components/footer/Footer'
@@ -103,6 +105,24 @@ const ContactUs = () => {
             {/* Contact Us Form section */}
             <section className={styles.contactUsSection}>
                 <form onSubmit={handleSubmitClick} className={styles.contactUsForm}>
+                    <div className={styles.formBackground}>
+                        <LightRays
+                            raysOrigin="top-center"
+                            raysColor="#00ff00"
+                            raysSpeed={1}
+                            lightSpread={1}
+                            rayLength={5}
+                            followMouse={true}
+                            mouseInfluence={0.1}
+                            noiseAmount={0}
+                            distortion={0}
+                            className="custom-rays"
+                            pulsating={false}
+                            fadeDistance={20}
+                            saturation={1}
+                        />
+                    </div>
+
                     <div className={styles.contactUsIntro}>
                         <h1 className={styles.formHeading}>
                             Get in -<br />
@@ -151,7 +171,7 @@ const ContactUs = () => {
                             <div className={styles.customSelect} ref={selectRef}>
 
                                 <div
-                                    className={styles.selectHeader}
+                                    className={`${styles.selectHeader} ${selectedReason ? styles.selected : ''}`}
                                     onClick={() => setOpen(!open)}
                                 >
                                     <p>{selectedReason

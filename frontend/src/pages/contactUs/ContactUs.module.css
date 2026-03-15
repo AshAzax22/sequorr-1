@@ -10,14 +10,26 @@
 }
 
 .contactUsForm {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  background-color: rgba(var(--primary-green-rgb), 0.1);
+  /* background-color: rgba(var(--primary-green-rgb), 0.1); */
   max-width: 1000px;
   width: 80%;
   padding: 28px;
   border-radius: 12px;
+  border: 1px solid rgba(var(--primary-green-rgb), 0.1);
+  overflow: hidden;
+}
+
+.formBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .contactUsIntro {
@@ -61,7 +73,8 @@
 }
 
 .errorSpace {
-  min-height: 24px; /* Reserve space for error messages */
+  min-height: 24px;
+  /* Reserve space for error messages */
   display: flex;
   align-items: center;
 }
@@ -104,12 +117,16 @@
   border-radius: 8px;
   font-size: 16px;
   background: rgba(0, 0, 0, 0.5);
-  color: #fff;
+  color: rgba(255, 255, 255, 0.5);
   outline: none;
   transition: border-color 150ms ease;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.selected {
+  color: white;
 }
 
 .selectDropDownIcon {
@@ -121,7 +138,6 @@
 .rotated {
   transform: rotate(180deg);
 }
-
 
 .selectDropdown {
   position: absolute;
@@ -161,7 +177,7 @@
   font-size: clamp(13px, 4vw, 16px);
   border: none;
   border-radius: 8px;
-  background: rgba(var(--primary-green-rgb), 0.8);
+  background: rgba(var(--primary-green-rgb), 1);
   color: #0b0b0b;
   font-weight: 600;
   cursor: pointer;
@@ -189,6 +205,17 @@
   .contactUsIntro {
     gap: 40px;
   }
+
+  .input,
+  .select,
+  .textarea {
+    padding: 8px 20px;
+  }
+
+  .selectHeader {
+    width: 100%;
+    padding: 8px 20px;
+  }
 }
 
 @media (max-width: 450px) {
@@ -201,6 +228,17 @@
   }
 
   .contactUsIntro {
-    gap: 40px;
+    gap: 10px;
+  }
+
+  .input,
+  .select,
+  .textarea {
+    padding: 6px 10px;
+  }
+
+  .selectHeader {
+    width: 100%;
+    padding: 6px 10px;
   }
 }
