@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import Navbar from "../../components/navbar/Navbar";
 import styles from "./Blog.module.css";
 
 const Blog = () => {
@@ -15,7 +16,7 @@ const Blog = () => {
         setLoading(true);
         setError(null);
         const response = await fetch(
-          `${import.meta.env.VITE_BACKEND_API_URL}/blog/${slug}`,
+          `${import.meta.env.VITE_API_URL}/blog/${slug}`,
         );
         const data = await response.json();
 
@@ -83,6 +84,7 @@ const Blog = () => {
 
   return (
     <section className={styles.blogSection}>
+      <Navbar />
       <div className={styles.topNavigation}>
         <button
           onClick={() => navigate(-1)}
@@ -109,7 +111,7 @@ const Blog = () => {
           <div className={styles.tags}>
             {blog.tags?.map((tag, index) => (
               <span key={index} className={styles.tag}>
-                #{tag}
+                {tag}
               </span>
             ))}
           </div>

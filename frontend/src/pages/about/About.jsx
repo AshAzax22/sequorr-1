@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from '../../components/navbar/Navbar'
+import Logo from '../../assets/navbar/logo.svg'
 import styles from './About.module.css'
 
 import FitBoxOne from '../../assets/about/aboutFitness/box1.svg'
@@ -53,7 +54,7 @@ const About = () => {
                     </div>
 
                     <div className={styles.aboutHeroText}>
-                        <h1 className={styles.aboutHeroTitle}>Sequorr</h1>
+                        <img src={Logo} alt="Sequorr" className={styles.aboutHeroTitle} />
 
                         <h3 className={styles.aboutHeroSubtitle}>Sequorr is a community-based fitness app created to make movement feel social, motivating, and sustainable — for everyday people.</h3>
 

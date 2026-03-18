@@ -9,7 +9,6 @@
 
 .topNavigation {
   max-width: 1200px;
-  margin: 0 auto 20px;
   width: 100%;
 }
 
@@ -57,13 +56,11 @@
 }
 
 .tag {
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 100px;
+  background: rgba(225, 225, 225, 0.2);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 1000px;
   font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1px;
   transition: background 0.2s ease;
 }
 
@@ -86,8 +83,7 @@
   align-items: center;
   gap: 10px;
   color: #666;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 14px;
 }
 
 .dot {
@@ -118,6 +114,7 @@
   width: 100%;
 }
 
+
 .sidebar {
   position: sticky;
   top: 120px;
@@ -126,10 +123,8 @@
 
 .stickyNav h3 {
   font-size: clamp(16px, 2vw, 20px);
-  font-weight: 700;
   margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-weight: 600;
   color: #fff;
 }
 
@@ -147,7 +142,7 @@
   padding: 8px 0;
   text-align: left;
   font-size: clamp(14px, 2vw, 16px);
-  font-weight: 600;
+  /* font-weight: 600; */
   color: rgba(255, 255, 255, 0.4);
   cursor: pointer;
   width: 100%;
@@ -170,7 +165,6 @@
   line-height: 1.6;
   color: #fff;
   margin-bottom: 3rem;
-  font-weight: 200;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding-bottom: 40px;
 }
@@ -202,8 +196,8 @@
 }
 
 .subHeading {
-  font-size: clamp(24px, 2vw, 32px);
-  font-weight: 700;
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 600;
   color: var(--primary-green);
 }
 
@@ -304,7 +298,8 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 100px;
     font-size: 14px;
-    border-left: 1px solid rgba(255, 255, 255, 0.1); /* Override sidebar style */
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    /* Override sidebar style */
   }
 
   .navItem:hover {

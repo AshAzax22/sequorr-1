@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Navbar from '../../components/navbar/Navbar'
+import Logo from '../../assets/navbar/logo.svg'
 import styles from './Features.module.css'
 
 import Graphics from '../../assets/feature/mobileGraphic.svg'
@@ -131,7 +132,7 @@ const Features = () => {
                     </div>
 
                     <div className={styles.featuresText}>
-                        <h1 className={styles.featuresTitle}>Sequorr</h1>
+                        <img src={Logo} alt="Sequorr" className={styles.featuresTitle} />
 
                         <h3 className={styles.featuresSubtitle}>No pressure. No complexity. Just consistency.</h3>
 

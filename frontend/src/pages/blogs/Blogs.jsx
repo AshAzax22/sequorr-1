@@ -1,9 +1,11 @@
 import React from 'react'
 import Navbar from '../../components/navbar/Navbar'
+import Logo from '../../assets/navbar/logo.svg'
 import styles from './Blogs.module.css'
 
 import { GridScan } from '../../components/react-bits/gridScan/GridScan.jsx'
 import FeaturedBlogs from '../../components/featuredBlogs/FeaturedBlogs'
+import DiscoverAll from '../../components/discoverAll/DiscoverAll'
 import Movement from '../../components/movement/Movement'
 import Footer from '../../components/footer/Footer'
 
@@ -32,7 +34,7 @@ const Blogs = () => {
                     </div>
 
                     <div className={styles.blogsHeroText}>
-                        <h1 className={styles.blogsHeroTitle}>Sequorr</h1>
+                        <img src={Logo} alt="Sequorr" className={styles.blogsHeroTitle} />
 
                         <h3 className={styles.blogsHeroSubtitle}>Thoughts, experiences, and reflections on staying active — together.</h3>
                     </div>
@@ -48,6 +50,9 @@ const Blogs = () => {
 
             {/* Movement Section */}
             < Movement />
+
+            {/* Discover All Blogs Section */}
+            < DiscoverAll />
 
             {/* Footer Section */}
             < Footer />

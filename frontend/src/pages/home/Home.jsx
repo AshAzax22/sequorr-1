@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../../components/navbar/Navbar'
+import Logo from '../../assets/navbar/logo.svg'
 import styles from './Home.module.css'
 
 import Dither from '../../components/react-bits/dither/Dither'
@@ -36,15 +37,15 @@ const Home = () => {
 
                 <div className={styles.heroContent}>
                     <div className={styles.heroTagline}>
-                        <p className={styles.taglineText}>Train. Track. Connect. Stay consistent.</p>
+                        <p className={styles.taglineText}>Track it. Share it. Own it.</p>
                     </div>
 
                     <div className={styles.heroText}>
-                        <h1 className={styles.heroTitle}>Sequorr</h1>
+                        <img src={Logo} alt="Sequorr" className={styles.heroTitle} />
 
-                        <h3 className={styles.heroSubtitle}>Fitness, Together.</h3>
+                        <h3 className={styles.heroSubtitle}>Prove it.</h3>
 
-                        <p className={styles.heroDescription}>A community-first fitness app built for everyday movement — not just numbers.</p>
+                        <p className={styles.heroDescription}>A community-first fitness app built for everyday movement, not just numbers.</p>
                     </div>
 
                     <div className={styles.buttonGroup}>
