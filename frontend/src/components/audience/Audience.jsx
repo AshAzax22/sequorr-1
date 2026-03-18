@@ -12,6 +12,9 @@ import beginnersBg from '../../assets/homeAudience/beginners.svg'
 import hobbyistsBg from '../../assets/homeAudience/hobbyists.svg'
 import athletesBg from '../../assets/homeAudience/atheletes.svg'
 import everyoneBg from '../../assets/homeAudience/everyone.svg'
+// import Image2 from '../../assets/audience/image2.svg'
+// import Image3 from '../../assets/audience/image3.png'
+import SectionHeader from '../sectionHeader/SectionHeader'
 
 const PERSONAS = [
     {
@@ -48,16 +51,10 @@ const Audience = () => {
     useScrollAnimation();
     return (
         <section className={styles.audienceSection}>
-            <div className="sectionHeader">
-                <div className="sectionTitleContainer">
-                    <p className="sectionTitleText">Not Just Fitness. A Shared Experience.</p>
-                </div>
-
-                <div className="sectionDescriptionContainer">
-                    <p className="sectionDescriptionText reveal">Sequorr brings people, movement, and motivation together — so staying active feels natural, social, and sustainable.</p>
-                </div>
-            </div>
-
+            <SectionHeader 
+                title="A space for every kind of active"
+                description={<>Not everyone wants to train for a marathon. Some people just want to move more often.<br />Sequorr is the community for the rest of us.</>}
+            />
             <div className={styles.personasGrid}>
                 <div className={styles.glowEffect}></div>
 

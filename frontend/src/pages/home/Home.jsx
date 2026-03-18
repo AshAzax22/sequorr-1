@@ -1,6 +1,7 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import Navbar from '../../components/navbar/Navbar'
-import Logo from '../../assets/navbar/logo.svg'
+import Logo from '../../assets/navbar/wordmark.svg'
 import styles from './Home.module.css'
 
 import Dither from '../../components/react-bits/dither/Dither'
@@ -10,18 +11,19 @@ import Motivation from '../../components/motivation/Motivation'
 import FeaturedBlogs from '../../components/featuredBlogs/FeaturedBlogs'
 import Footer from '../../components/footer/Footer'
 import useScrollAnimation from '../../hooks/useScrollAnimation'
+import JoinButton from '../../components/joinButton/JoinButton'
+import SectionHeader from '../../components/sectionHeader/SectionHeader'
 
 const Home = () => {
-    const handleJoinClick = () => {
-        console.log('Join the Movement clicked');
-    }
+    const navigate = useNavigate();
 
     useScrollAnimation();
 
     return (
         <>
             <Navbar />
-            {/* Hero section */}
+            <div className={styles.heroContainer}>
+                {/* Hero section */}
             <section className={styles.heroSection}>
                 <div className={styles.heroBackground}>
                     <Dither
@@ -49,23 +51,18 @@ const Home = () => {
                     </div>
 
                     <div className={styles.buttonGroup}>
-                        <button onClick={handleJoinClick} className={styles.btnPrimary}>Join the Movement</button>
-                        <button onClick={handleJoinClick} className={styles.btnSecondary}>Explore Features</button>
+                        <JoinButton />
+                        <button onClick={() => { window.scrollTo(0,0); navigate('/features'); }} className={styles.btnSecondary}>Explore Features</button>
                     </div>
                 </div>
             </section>
 
             {/* About section */}
             <section className={styles.aboutSection}>
-                <div className="sectionHeader">
-                    <div className="sectionTitleContainer">
-                        <p className="sectionTitleText">Not Just Fitness. A Shared Experience.</p>
-                    </div>
-
-                    <div className="sectionDescriptionContainer">
-                        <p className="sectionDescriptionText reveal">Sequorr brings people, movement, and motivation together — so staying active feels natural, social, and sustainable.</p>
-                    </div>
-                </div>
+                <SectionHeader 
+                    title="Not Just Fitness. A Shared Experience."
+                    description="Sequorr brings people, movement, and motivation together, staying active feels natural, social, and sustainable."
+                />
 
                 <div className={styles.aboutBentoGrid}>
                     <div className={`${styles.bentoItem} ${styles.aboutBentoItemOne}`}>
@@ -84,7 +81,7 @@ const Home = () => {
                     </div>
 
                     <div className={`${styles.bentoItem} ${styles.aboutBentoItemFour}`}>
-                        <div className={styles.aboutBentoButton}>
+                        <div className={styles.aboutBentoButton} onClick={() => { window.scrollTo(0,0); navigate('/features'); }} style={{ cursor: 'pointer' }}>
                             <p className={styles.aboutBentoButtonText}>Explore Features</p>
                         </div>
                     </div>
@@ -97,9 +94,7 @@ const Home = () => {
                     <div className={`${styles.bentoItem} ${styles.aboutBentoItemSix}`}>
                         <h1 className={`${styles.aboutBentoTitle} reveal`}>Move with us.</h1>
                         <p className={`${styles.aboutBentoDescription} reveal`}>Join early and experience a more connected way to stay active.</p>
-                        <div className={styles.aboutBentoButton}>
-                            <p className={styles.aboutBentoButtonText}>Join the Waitlist</p>
-                        </div>
+                        <JoinButton />
                     </div>
                 </div>
             </section>
@@ -118,6 +113,8 @@ const Home = () => {
 
             {/* Footer Section */}
             <Footer />
+            </div>
+
         </>
     )
 }

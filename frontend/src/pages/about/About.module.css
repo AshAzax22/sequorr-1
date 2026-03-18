@@ -1,4 +1,10 @@
 /* About Hero Section Styles */
+.aboutContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
 .aboutHeroSection {
     position: relative;
     width: 100%;
@@ -85,26 +91,6 @@
     justify-content: center;
 }
 
-/* Base Button Styles */
-.btnPrimary {
-    padding: 12px 24px;
-    border-radius: 100px;
-    font-size: clamp(13px, 2vw, 16px);
-    font-weight: 500;
-    cursor: pointer;
-    letter-spacing: 0.5px;
-    transition: var(--transition-smooth);
-    border: none;
-    color: #FFFFFF;
-    border: 2px solid rgba(255, 255, 255, 0.20);
-    background: radial-gradient(50% 50% at 50% 50%, #86bb8d 0%, var(--dark-green) 100%);
-    box-shadow: 0 0 24px 0 rgba(var(--primary-green-rgb), 0.60);
-}
-
-.btnPrimary:hover {
-    background: radial-gradient(circle at 50% 50%, var(--primary-green), var(--primary-green));
-    transform: translateY(-2px);
-}
 
 /* Responsive — Tablet */
 @media (max-width: 1024px) {
@@ -156,11 +142,7 @@
         max-width: 300px;
     }
 
-    .btnPrimary {
-        width: 100%;
-        text-align: center;
-        padding: 14px 20px;
-    }
+
 }
 
 /* About Fitness Section Styles */
@@ -170,7 +152,7 @@
     flex-direction: column;
     align-items: center;
     gap: clamp(40px, 8vw, 80px);
-    padding: clamp(60px, 12vw, 120px) 24px;
+    padding: 24px;
 }
 
 .aboutFitnessHeader {
@@ -212,7 +194,7 @@
 .fitnessTextContent {
     display: flex;
     flex-direction: column;
-    gap:12px;
+    gap: 12px;
     width: 100%;
 }
 
@@ -223,7 +205,7 @@
 }
 
 .fitnessBlockText {
-    font-size: clamp(16px, 1.2vw, 18px);
+    font-size: clamp(14px, 1.2vw, 16px);
     font-weight: 400;
     color: rgba(255, 255, 255, 0.7);
 }
@@ -373,18 +355,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: clamp(60px, 12vw, 120px) 24px;
+    padding: 24px;
 }
 
-.whySequorrHeader {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    width: 100%;
-    text-align: center;
-}
+
 
 .whySequorrContent {
     display: flex;
@@ -431,18 +405,16 @@
     cursor: pointer;
     border: 1px solid rgba(var(--primary-green-rgb), 0.8);
     transform: translateY(-2px);
-    box-shadow: 0 0 10px 0 rgba(var(--primary-green-rgb), 0.60);
 }
 
 .whySequorrBlockTitle {
-    font-size: clamp(16px, 4vw, 20px);
-    font-weight: 600;
+    font-size: clamp(16px, 4vw, 18px);
+    font-weight: 500;
     color: #FFFFFF;
 }
 
 .whySequorrBlockText {
-    font-size: clamp(14px, 1.2vw, 16px);
-    font-weight: 400;
+    font-size: 14px;
     color: rgba(255, 255, 255, 0.6);
 }
 

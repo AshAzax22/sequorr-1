@@ -8,6 +8,7 @@ import Option3 from '../../assets/believe/option3.svg'
 import Option4 from '../../assets/believe/option4.svg'
 import Option5 from '../../assets/believe/option5.svg'
 import useScrollAnimation from '../../hooks/useScrollAnimation'
+import SectionHeader from '../sectionHeader/SectionHeader'
 
 const Believe = () => {
     const believes = [
@@ -49,15 +50,10 @@ const Believe = () => {
             {/* What We Believe Section */}
             <section className={styles.believeSection}>
                 <div className={styles.believeHeader}>
-                    <div className="sectionHeader">
-                        <div className="sectionTitleContainer">
-                            <p className="sectionTitleText">What we believe</p>
-                        </div>
-
-                        <div className="sectionDescriptionContainer">
-                            <p className="sectionDescriptionText reveal">These beliefs guide how Sequorr is designed — and how it should feel to use.</p>
-                        </div>
-                    </div>
+                    <SectionHeader 
+                        title="What we believe"
+                        description="At Sequorr, we believe staying active doesn't have to be complicated, isolated, or perfect."
+                    />
                 </div>
 
                 <div className={styles.believeContent}>

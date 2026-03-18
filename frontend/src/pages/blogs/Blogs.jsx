@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../../components/navbar/Navbar'
-import Logo from '../../assets/navbar/logo.svg'
+import Logo from '../../assets/navbar/wordmark.svg'
 import styles from './Blogs.module.css'
 
 import { GridScan } from '../../components/react-bits/gridScan/GridScan.jsx'
@@ -8,12 +8,9 @@ import FeaturedBlogs from '../../components/featuredBlogs/FeaturedBlogs'
 import DiscoverAll from '../../components/discoverAll/DiscoverAll'
 import Movement from '../../components/movement/Movement'
 import Footer from '../../components/footer/Footer'
+import JoinButton from '../../components/joinButton/JoinButton'
 
 const Blogs = () => {
-    const handleJoinClick = () => {
-        console.log('Join the Movement clicked');
-    }
-
     return (
         <>
             <Navbar />
@@ -40,7 +37,7 @@ const Blogs = () => {
                     </div>
 
                     <div className={styles.blogsHeroButtonGroup}>
-                        <button onClick={handleJoinClick} className={styles.btnPrimary}>Join the Movement</button>
+                        <JoinButton />
                     </div>
                 </div>
             </section>

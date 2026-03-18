@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 12px 32px;
+    padding-left: 12px;
     position: fixed;
     z-index: 1000;
     top: 24px;
@@ -21,11 +22,11 @@
 .navLogo {
     display: flex;
     align-items: center;
-    gap: 12px;
 }
 
 .navLogo img {
-    width: clamp(60px, 6vw, 70px);
+    height: 32px;
+    object-fit: contain;
 }
 
 .hamburger {

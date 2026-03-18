@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './DiscoverAll.module.css';
 import BlogCard from '../blogCard/BlogCard';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
@@ -14,9 +14,23 @@ const DiscoverAll = () => {
   const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
   
   // debounced search query state to prevent too many requests
   const [debouncedSearch, setDebouncedSearch] = useState('');
+
+  // Handle click outside to close dropdown
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   useScrollAnimation();
 
@@ -128,7 +142,7 @@ const DiscoverAll = () => {
           />
         </div>
 
-        <div className={styles.dropdownContainer}>
+        <div className={styles.dropdownContainer} ref={dropdownRef}>
           <button 
             className={styles.dropdownButton}
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}

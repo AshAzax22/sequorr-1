@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import styles from './Motivation.module.css'
 import useScrollAnimation from '../../hooks/useScrollAnimation'
-
-import Pointer from '../../assets/movement/pointer.svg'
 import Box8Button from '../../assets/motivation/box8button.svg'
+import SectionHeader from '../sectionHeader/SectionHeader'
 import Stepper, { Step } from '../../components/react-bits/stepper/Stepper'
 
 const Motivation = () => {
@@ -28,15 +27,10 @@ const Motivation = () => {
         <>
             {/* Motivation Section */}
             <section className={styles.motivationSection}>
-                <div className="sectionHeader">
-                    <div className="sectionTitleContainer">
-                        <p className="sectionTitleText">What you will experience</p>
-                    </div>
-
-                    <div className="sectionDescriptionContainer">
-                        <p className="sectionDescriptionText reveal">Not just features — real feelings that keep you coming back.</p>
-                    </div>
-                </div>
+                <SectionHeader 
+                    title="Motivation without pressure"
+                    description={<>See what your friends are doing. Share your own moments.<br />It's not about being the best — it's about moving together.</>}
+                />
 
                 <div className={styles.motivationShowcase}>
                     <div className={styles.motivationCard}>

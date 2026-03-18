@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from '../../components/navbar/Navbar'
-import Logo from '../../assets/navbar/logo.svg'
+import Logo from '../../assets/navbar/wordmark.svg'
 import styles from './About.module.css'
 
 import FitBoxOne from '../../assets/about/aboutFitness/box1.svg'
@@ -16,6 +16,8 @@ import Believe from '../../components/believe/Believe'
 import Movement from '../../components/movement/Movement'
 import Footer from '../../components/footer/Footer'
 import useScrollAnimation from '../../hooks/useScrollAnimation'
+import JoinButton from '../../components/joinButton/JoinButton'
+import SectionHeader from '../../components/sectionHeader/SectionHeader'
 
 const About = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -28,17 +30,15 @@ const About = () => {
 
     const reactiveAmplitude = windowWidth <= 480 ? 1 : windowWidth <= 768 ? 2 : 3;
 
-    const handleJoinClick = () => {
-        console.log('Join the Movement clicked');
-    }
-
     useScrollAnimation();
 
     return (
         <>
             <Navbar />
-            {/* About Hero section */}
-            <section className={styles.aboutHeroSection}>
+            
+            <div className={styles.aboutContainer}>
+                {/* About Hero section */}
+                <section className={styles.aboutHeroSection}>
                 <div className={styles.aboutHeroBackground}>
                     <Threads
                         amplitude={reactiveAmplitude}
@@ -62,7 +62,7 @@ const About = () => {
                     </div>
 
                     <div className={styles.aboutHeroButtonGroup}>
-                        <button onClick={handleJoinClick} className={styles.btnPrimary}>Join the Movement</button>
+                        <JoinButton />
                     </div>
                 </div>
             </section>
@@ -70,15 +70,10 @@ const About = () => {
             {/* About Fitness Section */}
             <section className={styles.aboutFitnessSection}>
                 <div className={styles.aboutFitnessHeader}>
-                    <div className="sectionHeader">
-                        <div className="sectionTitleContainer">
-                            <p className="sectionTitleText">What we think about fitness</p>
-                        </div>
-
-                        <div className="sectionDescriptionContainer">
-                            <p className="sectionDescriptionText reveal">Not as a goal to chase — but as a habit to return to.</p>
-                        </div>
-                    </div>
+                    <SectionHeader 
+                        title="What we think about fitness"
+                        description="Not as a goal to chase — but as a habit to return to."
+                    />
                 </div>
 
                 <div className={styles.fitnessContent}>
@@ -147,20 +142,11 @@ const About = () => {
 
             {/* Why Sequorr Section */}
             <section className={styles.whySequorrSection}>
-                <div className={styles.whySequorrHeader}>
-                    <div className="sectionHeader">
-                        <div className="sectionTitleContainer">
-                            <p className="sectionTitleText">Why we're building Sequorr</p>
-                        </div>
-
-                        <div className="sectionDescriptionContainer">
-                            <p className="sectionDescriptionText reveal">
-                                Every feature in Sequorr is built to help you show up more often — without pressure or perfection.<br />
-                                Instead of pushing harder, Sequorr focuses on making movement feel lighter, social, and sustainable.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                    <SectionHeader 
+                        title="Why we're building Sequorr"
+                        description={<>Every feature in Sequorr is built to help you show up more often — without pressure or perfection.<br />Instead of pushing harder, Sequorr focuses on making movement feel lighter, social, and sustainable.</>}
+                    />
+                
 
                 <div className={styles.whySequorrContent}>
                     <div className={styles.whySequorrBlock}>
@@ -192,6 +178,9 @@ const About = () => {
 
             {/* Movement Section */}
             < Movement />
+            </div>
+
+            
 
             {/* Footer Section */}
             < Footer />

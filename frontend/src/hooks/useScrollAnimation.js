@@ -4,7 +4,7 @@ const useScrollAnimation = () => {
     useEffect(() => {
         // 1. Reveal Observer (from bottom)
         const revealOptions = {
-            threshold: 0.1, // Lowered for better reliability
+            threshold: 0.1,
             rootMargin: '0px 0px -20px 0px' 
         };
 
@@ -17,25 +17,7 @@ const useScrollAnimation = () => {
             });
         }, revealOptions);
 
-        // Function to observe all current elements
-        const observeNewElements = () => {
-            const revealElements = document.querySelectorAll('.reveal:not(.revealVisible)');
-            revealElements.forEach((el) => revealObserver.observe(el));
-        };
-
-        observeNewElements();
-
-        // 2. Mutation Observer to catch dynamic content (like blogs)
-        const mutationObserver = new MutationObserver(() => {
-            observeNewElements();
-        });
-
-        mutationObserver.observe(document.body, {
-            childList: true,
-            subtree: true
-        });
-
-        // 3. Header Exit Observer (fade out near top)
+        // 2. Header Exit Observer (fade out near top)
         const headerOptions = {
             threshold: 0,
             rootMargin: '-100px 0px 0px 0px' 
@@ -51,13 +33,32 @@ const useScrollAnimation = () => {
             });
         }, headerOptions);
 
-        const headers = document.querySelectorAll('.sectionHeader');
-        headers.forEach((h) => headerObserver.observe(h));
+        // Function to observe elements
+        const observeElements = () => {
+            const revealElements = document.querySelectorAll('.reveal:not(.revealVisible)');
+            revealElements.forEach((el) => revealObserver.observe(el));
+
+            const headers = document.querySelectorAll('.sectionHeader');
+            headers.forEach((h) => headerObserver.observe(h));
+        };
+
+        // Initial observation
+        observeElements();
+
+        // 3. Mutation Observer for dynamic content
+        const mutationObserver = new MutationObserver(() => {
+            observeElements();
+        });
+
+        mutationObserver.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
 
         return () => {
             revealObserver.disconnect();
-            mutationObserver.disconnect();
             headerObserver.disconnect();
+            mutationObserver.disconnect();
         };
     }, []);
 };

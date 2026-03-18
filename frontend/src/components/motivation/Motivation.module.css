@@ -110,29 +110,29 @@
     position: relative;
     width: 100%;
     height: 0;
-    border-radius: 8px 8px 0 0 ;
+    border-radius: 8px 8px 0 0;
     background: linear-gradient(0deg, #0A710D 0%, #2EEE34 100%);
     bottom: 0;
     transition: height 0.6s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-.motivationCard:nth-child(2):hover .cardBarContainer .cardBar:nth-child(1) {
+.barsVisible.cardBarContainer .cardBar:nth-child(1) {
     height: 50%;
 }
 
-.motivationCard:nth-child(2):hover .cardBarContainer .cardBar:nth-child(2) {
+.barsVisible.cardBarContainer .cardBar:nth-child(2) {
     height: 80%;
 }
 
-.motivationCard:nth-child(2):hover .cardBarContainer .cardBar:nth-child(3) {
+.barsVisible.cardBarContainer .cardBar:nth-child(3) {
     height: 60%;
 }
 
-.motivationCard:nth-child(2):hover .cardBarContainer .cardBar:nth-child(4) {
+.barsVisible.cardBarContainer .cardBar:nth-child(4) {
     height: 80%;
 }
 
-.motivationCard:nth-child(2):hover .cardBarContainer .cardBar:nth-child(5) {
+.barsVisible.cardBarContainer .cardBar:nth-child(5) {
     height: 100%;
 }
 

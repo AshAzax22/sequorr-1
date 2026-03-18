@@ -1,3 +1,9 @@
+.featuresContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
 /* Features Hero Section Styles */
 .featuresSection {
     position: relative;
@@ -72,27 +78,6 @@
     color: rgba(255, 255, 255, 0.6);
     max-width: 600px;
     line-height: 1.2;
-}
-
-/* Button Styles (merged duplicate rules) */
-.btnPrimary {
-    padding: 10px 20px;
-    border-radius: 100px;
-    font-size: clamp(13px, 2vw, 16px);
-    font-weight: 500;
-    cursor: pointer;
-    letter-spacing: 0.5px;
-    transition: var(--transition-smooth);
-    border: 2px solid rgba(255, 255, 255, 0.20);
-    color: #FFFFFF;
-    background: radial-gradient(50% 50% at 50% 50%, #86bb8d 0%, var(--dark-green) 100%);
-    box-shadow: 0 0 24px 0 rgba(var(--primary-green-rgb), 0.60);
-    pointer-events: auto;
-}
-
-.btnPrimary:hover {
-    background: radial-gradient(circle at 50% 50%, var(--primary-green), var(--primary-green));
-    transform: translateY(-2px);
 }
 
 /* Features Animation Styles */
@@ -236,8 +221,7 @@
     min-height: 100dvh;
     padding: 100px 40px 60px;
     flex-direction: column;
-    justify-content: space-around;
-    gap: 48px;
+    justify-content: space-between;
     background-image: url('../../assets/feature/verticalArcL.svg'), url('../../assets/feature/graphics.svg'), url('../../assets/feature/verticalArcR.svg');
     background-size: contain, 650px, contain;
     background-position: left, center, right;
@@ -250,6 +234,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px 0;
+    background-color: red;
 }
 
 .graphicContainer img {
@@ -545,7 +530,7 @@
     position: relative;
     z-index: 2;
     font-size: clamp(14px, 1.5vw, 18px);
-    font-weight: 500;
+    /* font-weight: 500; */
     color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
     transition: var(--transition-smooth);
@@ -556,14 +541,14 @@
 }
 
 .featuresGalleryGridItemFourText:hover {
-    color: #FFFFFF;
+    /* color: #FFFFFF; */
     background-color: rgba(255, 255, 255, 0.05);
 }
 
 .activeTimeText {
     color: var(--primary-green) !important;
     background-color: rgba(var(--primary-green-rgb), 0.1) !important;
-    font-weight: 700;
+    /* font-weight: 700; */
 }
 
 /* Responsiveness */

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Navbar from '../../components/navbar/Navbar'
-import Logo from '../../assets/navbar/logo.svg'
+import Logo from '../../assets/navbar/wordmark.svg'
 import styles from './Features.module.css'
 
 import Graphics from '../../assets/feature/mobileGraphic.svg'
@@ -9,6 +9,8 @@ import DarkVeil from '../../components/react-bits/darkVeil/DarkVeil'
 import Motivation from '../../components/motivation/Motivation'
 import Footer from '../../components/footer/Footer'
 import useScrollAnimation from '../../hooks/useScrollAnimation'
+import JoinButton from '../../components/joinButton/JoinButton'
+import SectionHeader from '../../components/sectionHeader/SectionHeader'
 
 // morning
 import MorningGrid1 from '../../assets/feature/gallery/morning/grid1.svg'
@@ -104,16 +106,13 @@ const Features = () => {
         }
     }
 
-    const handleJoinClick = () => {
-        console.log('Join the Movement clicked');
-    }
-
     useScrollAnimation();
 
     return (
         <>
             <Navbar />
-            {/* Features Hero section */}
+            <div className={styles.featuresContainer}>
+                {/* Features Hero section */}
             <section className={styles.featuresSection}>
                 <div className={styles.featuresBackground}>
                     <DarkVeil
@@ -139,8 +138,8 @@ const Features = () => {
                         <p className={styles.featuresDescription}>Sequorr combines movement, motivation, and community into one simple experience designed for real life.</p>
                     </div>
 
-                    <div className={styles.buttonGroup}>
-                        <button onClick={handleJoinClick} className={styles.btnPrimary}>Join the Movement</button>
+                    <div className={styles.featuresButtonGroup}>
+                        <JoinButton />
                     </div>
 
                     <div className={styles.featuresAnimationContainer}>
@@ -159,15 +158,10 @@ const Features = () => {
             {/* Features Type Section */}
             <section className={`${styles.featuresSection} ${styles.featuresTypeSection}`}>
                 <div className={styles.typeHeader}>
-                    <div className="sectionHeader">
-                        <div className="sectionTitleContainer">
-                            <p className="sectionTitleText">Designed for consistency, not overwhelm.</p>
-                        </div>
-
-                        <div className="sectionDescriptionContainer">
-                            <p className="sectionDescriptionText reveal">Every feature in Sequorr is built to help you show up more often — without pressure or perfection. Instead of pushing harder, Sequorr focuses on making movement feel lighter, social, and sustainable.</p>
-                        </div>
-                    </div>
+                    <SectionHeader 
+                        title="Designed for consistency, not overwhelm."
+                        description="Every feature in Sequorr is built to help you show up more often — without pressure or perfection. Instead of pushing harder, Sequorr focuses on making movement feel lighter, social, and sustainable."
+                    />
                 </div>
 
                 <div className={styles.graphicContainer}>
@@ -196,18 +190,10 @@ const Features = () => {
             {/* Features Gallery Section */}
             <section className={styles.featuresGallerySection}>
                 <div className={styles.typeHeader}>
-                    <div className="sectionHeader">
-                        <div className="sectionTitleContainer">
-                            <p className="sectionTitleText">Built to fit into real life.</p>
-                        </div>
-
-                        <div className="sectionDescriptionContainer">
-                            <p className="sectionDescriptionText reveal">
-                                Fitness doesn't live in a single moment — it flows through your day.<br />
-                                Sequorr supports movement whenever it happens, whether it's a morning walk, a quick break, or a weekend activity.
-                            </p>
-                        </div>
-                    </div>
+                    <SectionHeader 
+                        title="Built to fit into real life."
+                        description={<>Fitness doesn't live in a single moment — it flows through your day.<br />Sequorr supports movement whenever it happens, whether it's a morning walk, a quick break, or a weekend activity.</>}
+                    />
                 </div>
 
                 <div className={styles.featuresGalleryGrid}>
@@ -260,6 +246,7 @@ const Features = () => {
 
             {/* Footer Section */}
             <Footer />
+            </div>
         </>
     )
 }
