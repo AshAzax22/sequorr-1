@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './DiscoverAll.module.css';
 import BlogCard from '../blogCard/BlogCard';
+import BlogCardSkeleton from '../blogCardSkeleton/BlogCardSkeleton';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 const DiscoverAll = () => {
@@ -178,7 +179,11 @@ const DiscoverAll = () => {
       <div className={styles.blogsWrapper}>
         <div className={styles.blogsGrid}>
           {loading && !loadingMore ? (
-            <div className={styles.loading}>Loading blogs...</div>
+            <>
+              {[...Array(6)].map((_, i) => (
+                <BlogCardSkeleton key={i} />
+              ))}
+            </>
           ) : blogs.length === 0 ? (
             <div className={styles.noBlogs}>No blogs found matching your criteria.</div>
           ) : (

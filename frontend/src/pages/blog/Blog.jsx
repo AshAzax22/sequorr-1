@@ -7,6 +7,7 @@ const Blog = () => {
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [activeSection, setActiveSection] = useState(null);
   const { slug } = useParams();
   const navigate = useNavigate();
 
@@ -35,6 +36,36 @@ const Blog = () => {
 
     fetchBlog();
   }, [slug]);
+
+  // ScrollSpy Implementation
+  useEffect(() => {
+    if (!blog?.sections) return;
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-10% 0px -80% 0px', // Detect when section is near the top
+      threshold: 0
+    };
+
+    const handleIntersect = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+
+    // Observe all sections
+    blog.sections.forEach((_, index) => {
+      const element = document.getElementById(`section-${index}`);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, [blog, loading]);
+
 
   const formatDate = (dateString) => {
     const options = { day: "2-digit", month: "short", year: "2-digit" };
@@ -141,7 +172,7 @@ const Blog = () => {
                     <li key={index}>
                       <button
                         onClick={() => handleScrollTo(`section-${index}`)}
-                        className={styles.navItem}
+                        className={`${styles.navItem} ${activeSection === `section-${index}` ? styles.activeNavItem : ''}`}
                       >
                         {section.subHeading}
                       </button>

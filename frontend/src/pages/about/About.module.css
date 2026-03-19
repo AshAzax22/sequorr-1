@@ -5,144 +5,25 @@
     gap: 64px;
 }
 
-.aboutHeroSection {
-    position: relative;
-    width: 100%;
-    height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 24px;
-}
-
-.aboutHeroBackground {
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-}
-
-.aboutHeroContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    pointer-events: none;
-    position: relative;
-    width: 100%;
-    padding: 0 16px;
-    z-index: 1;
-}
-
-.aboutHeroTagline {
-    border-radius: 50px;
-    background-color: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    padding: 10px 24px;
-    text-align: center;
-}
-
-.taglineText {
-    font-size: clamp(13px, 1.5vw, 16px);
-    font-weight: 300;
-    font-style: italic;
-    color: var(--primary-green);
-}
-
-.aboutHeroText {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-    width: 100%;
-}
-
-.aboutHeroTitle {
-    height: clamp(26px, 8vw, 44px);
-    width: auto;
-    object-fit: contain;
-}
-
 .aboutHeroSubtitle {
-    font-size: clamp(16px, 3vw, 20px);
-    font-weight: 400;
-    color: #ffffff;
     max-width: 60%;
-}
-
-.aboutHeroDescription {
-    font-size: clamp(14px, 2vw, 18px);
-    color: rgba(255, 255, 255, 0.6);
-    max-width: 600px;
-    line-height: 1.2;
-}
-
-.aboutHeroButtonGroup {
-    display: flex;
-    gap: 24px;
-    pointer-events: auto;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 
 /* Responsive — Tablet */
 @media (max-width: 1024px) {
-    .aboutHeroText {
-        gap: 12px;
-    }
-
     .aboutHeroSubtitle {
         max-width: 80%;
     }
 }
 
 @media (max-width: 768px) {
-    .aboutHeroContent {
-        gap: 16px;
-    }
-
     .aboutHeroSubtitle {
         max-width: 90%;
-    }
-
-    .aboutHeroDescription {
-        max-width: 90%;
-        line-height: 1.3;
-    }
-
-    .aboutHeroButtonGroup {
-        gap: 16px;
     }
 }
 
 @media (max-width: 480px) {
-    .aboutHeroSection {
-        padding: 16px;
-    }
-
-    .aboutHeroContent {
-        gap: 12px;
-    }
-
-    .aboutHeroTagline {
-        padding: 8px 16px;
-    }
-
-    .aboutHeroButtonGroup {
-        flex-direction: column;
-        gap: 12px;
-        width: 100%;
-        max-width: 300px;
-    }
-
-
 }
 
 /* About Fitness Section Styles */

@@ -9,38 +9,30 @@ import DiscoverAll from '../../components/discoverAll/DiscoverAll'
 import Movement from '../../components/movement/Movement'
 import Footer from '../../components/footer/Footer'
 import JoinButton from '../../components/joinButton/JoinButton'
+import Hero from '../../components/hero/Hero'
 
 const Blogs = () => {
     return (
         <>
             <Navbar />
             {/* Blogs Hero section */}
-            <section className={styles.blogsHeroSection}>
-                <div className={styles.blogsHeroBackground}>
+            <div className={styles.blogsContainer}>
+                <Hero 
+                background={
                     <GridScan
                         className={styles.gridScan}
                         scanColor="#00ff00"
                         scanSpeed={1.0}
                         gridColor="#111"
                     />
-                </div>
-
-                <div className={styles.blogsHeroContent}>
-                    <div className={styles.blogsHeroTagline}>
-                        <p className={styles.taglineText}>Written for real life, not perfect routines.</p>
-                    </div>
-
-                    <div className={styles.blogsHeroText}>
-                        <img src={Logo} alt="Sequorr" className={styles.blogsHeroTitle} />
-
-                        <h3 className={styles.blogsHeroSubtitle}>Thoughts, experiences, and reflections on staying active — together.</h3>
-                    </div>
-
-                    <div className={styles.blogsHeroButtonGroup}>
-                        <JoinButton />
-                    </div>
-                </div>
-            </section>
+                }
+                tagline="Written for real life, not perfect routines."
+                title={<img src={Logo} alt="Sequorr" />}
+                subtitle="Thoughts, experiences, and reflections on staying active — together."
+                actions={<JoinButton />}
+                className={styles.blogsHeroSection}
+                contentClassName={styles.blogsHeroContent}
+            />
 
             {/* Featured Blogs Section */}
             < FeaturedBlogs />
@@ -53,6 +45,7 @@ const Blogs = () => {
 
             {/* Footer Section */}
             < Footer />
+            </div>
         </>
     )
 }

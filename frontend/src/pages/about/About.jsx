@@ -18,6 +18,7 @@ import Footer from '../../components/footer/Footer'
 import useScrollAnimation from '../../hooks/useScrollAnimation'
 import JoinButton from '../../components/joinButton/JoinButton'
 import SectionHeader from '../../components/sectionHeader/SectionHeader'
+import Hero from '../../components/hero/Hero'
 
 const About = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -38,34 +39,23 @@ const About = () => {
             
             <div className={styles.aboutContainer}>
                 {/* About Hero section */}
-                <section className={styles.aboutHeroSection}>
-                <div className={styles.aboutHeroBackground}>
-                    <Threads
-                        amplitude={reactiveAmplitude}
-                        distance={-0.5}
-                        enableMouseInteraction
-                        color={[0, 1, 0]}
-                    />
-                </div>
-
-                <div className={styles.aboutHeroContent}>
-                    <div className={styles.aboutHeroTagline}>
-                        <p className={styles.taglineText}>Built for movement. Powered by community.</p>
-                    </div>
-
-                    <div className={styles.aboutHeroText}>
-                        <img src={Logo} alt="Sequorr" className={styles.aboutHeroTitle} />
-
-                        <h3 className={styles.aboutHeroSubtitle}>Sequorr is a community-based fitness app created to make movement feel social, motivating, and sustainable — for everyday people.</h3>
-
-                        <p className={styles.aboutHeroDescription}>Not just for athletes. Built for anyone who wants to show up more often.</p>
-                    </div>
-
-                    <div className={styles.aboutHeroButtonGroup}>
-                        <JoinButton />
-                    </div>
-                </div>
-            </section>
+                <Hero 
+                    background={
+                        <Threads
+                            amplitude={reactiveAmplitude}
+                            distance={-0.5}
+                            enableMouseInteraction
+                            color={[0, 1, 0]}
+                        />
+                    }
+                    tagline="Built for movement. Powered by community."
+                    title={<img src={Logo} alt="Sequorr" />}
+                    subtitle="Sequorr is a community-based fitness app created to make movement feel social, motivating, and sustainable — for everyday people."
+                    description="Not just for athletes. Built for anyone who wants to show up more often."
+                    actions={<JoinButton />}
+                    className={styles.aboutHeroSection}
+                    contentClassName={styles.aboutHeroContent}
+                />
 
             {/* About Fitness Section */}
             <section className={styles.aboutFitnessSection}>

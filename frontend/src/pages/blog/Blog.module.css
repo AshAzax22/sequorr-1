@@ -151,10 +151,12 @@
   padding-left: 1rem;
 }
 
-.navItem:hover {
+.navItem:hover,
+.activeNavItem {
   color: #fff;
   border-left-color: var(--primary-green);
 }
+
 
 .mainContent {
   width: 100%;

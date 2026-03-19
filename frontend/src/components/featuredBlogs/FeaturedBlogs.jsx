@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from './FeaturedBlogs.module.css';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 import BlogCard from '../blogCard/BlogCard';
+import BlogCardSkeleton from '../blogCardSkeleton/BlogCardSkeleton';
 
 const FeaturedBlogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -70,7 +71,9 @@ const FeaturedBlogs = () => {
           </button>
         </div>
         <div className={styles.featuredBlogsContainer}>
-          <div className={styles.loading}>Loading featured blogs...</div>
+          {[...Array(3)].map((_, i) => (
+            <BlogCardSkeleton key={i} />
+          ))}
         </div>
       </section>
     );

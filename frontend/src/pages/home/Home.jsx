@@ -13,6 +13,7 @@ import Footer from '../../components/footer/Footer'
 import useScrollAnimation from '../../hooks/useScrollAnimation'
 import JoinButton from '../../components/joinButton/JoinButton'
 import SectionHeader from '../../components/sectionHeader/SectionHeader'
+import Hero from '../../components/hero/Hero'
 
 const Home = () => {
     const navigate = useNavigate();
@@ -24,8 +25,8 @@ const Home = () => {
             <Navbar />
             <div className={styles.heroContainer}>
                 {/* Hero section */}
-            <section className={styles.heroSection}>
-                <div className={styles.heroBackground}>
+            <Hero 
+                background={
                     <Dither
                         waveColor={[0.5, 0.8, 0.5]}
                         disableAnimation={false}
@@ -35,27 +36,18 @@ const Home = () => {
                         waveFrequency={2.4}
                         waveSpeed={0.05}
                     />
-                </div>
-
-                <div className={styles.heroContent}>
-                    <div className={styles.heroTagline}>
-                        <p className={styles.taglineText}>Track it. Share it. Own it.</p>
-                    </div>
-
-                    <div className={styles.heroText}>
-                        <img src={Logo} alt="Sequorr" className={styles.heroTitle} />
-
-                        <h3 className={styles.heroSubtitle}>Prove it.</h3>
-
-                        <p className={styles.heroDescription}>A community-first fitness app built for everyday movement, not just numbers.</p>
-                    </div>
-
-                    <div className={styles.buttonGroup}>
+                }
+                tagline="Track it. Share it. Own it."
+                title={<img src={Logo} alt="Sequorr" />}
+                subtitle="Prove it."
+                description="A community-first fitness app built for everyday movement, not just numbers."
+                actions={
+                    <>
                         <JoinButton />
                         <button onClick={() => { window.scrollTo(0,0); navigate('/features'); }} className={styles.btnSecondary}>Explore Features</button>
-                    </div>
-                </div>
-            </section>
+                    </>
+                }
+            />
 
             {/* About section */}
             <section className={styles.aboutSection}>

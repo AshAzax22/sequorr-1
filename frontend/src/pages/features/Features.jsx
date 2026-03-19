@@ -11,6 +11,7 @@ import Footer from '../../components/footer/Footer'
 import useScrollAnimation from '../../hooks/useScrollAnimation'
 import JoinButton from '../../components/joinButton/JoinButton'
 import SectionHeader from '../../components/sectionHeader/SectionHeader'
+import Hero from '../../components/hero/Hero'
 
 // morning
 import MorningGrid1 from '../../assets/feature/gallery/morning/grid1.svg'
@@ -113,8 +114,8 @@ const Features = () => {
             <Navbar />
             <div className={styles.featuresContainer}>
                 {/* Features Hero section */}
-            <section className={styles.featuresSection}>
-                <div className={styles.featuresBackground}>
+            <Hero 
+                background={
                     <DarkVeil
                         hueShift={112}
                         noiseIntensity={0}
@@ -123,47 +124,35 @@ const Features = () => {
                         scanlineFrequency={0}
                         warpAmount={0}
                     />
-                </div>
-
-                <div className={styles.featuresContent}>
-                    <div className={styles.featuresTagline}>
-                        <p className={styles.taglineText}>Everything you need to move — together.</p>
-                    </div>
-
-                    <div className={styles.featuresText}>
-                        <img src={Logo} alt="Sequorr" className={styles.featuresTitle} />
-
-                        <h3 className={styles.featuresSubtitle}>No pressure. No complexity. Just consistency.</h3>
-
-                        <p className={styles.featuresDescription}>Sequorr combines movement, motivation, and community into one simple experience designed for real life.</p>
-                    </div>
-
-                    <div className={styles.featuresButtonGroup}>
-                        <JoinButton />
-                    </div>
-
-                    <div className={styles.featuresAnimationContainer}>
-                        <div className={styles.featuresAnimation}></div>
-                        <div className={styles.cssTextRing} style={{ '--total': 39 }}>
-                            {Array.from("motivation · consistency · community · ").map((char, index) => (
-                                <span key={index} style={{ '--index': index }}>
-                                    {char === ' ' ? '\u00A0' : char}
-                                </span>
-                            ))}
-                        </div>
+                }
+                tagline="Everything you need to move — together."
+                title={<img src={Logo} alt="Sequorr" />}
+                subtitle="No pressure. No complexity. Just consistency."
+                description="Sequorr combines movement, motivation, and community into one simple experience designed for real life."
+                actions={<JoinButton />}
+                className={styles.featuresHeroSection}
+                // contentClassName={styles.featuresContent}
+            >
+                <div className={styles.featuresAnimationContainer}>
+                    <div className={styles.featuresAnimation}></div>
+                    <div className={styles.cssTextRing} style={{ '--total': 39 }}>
+                        {Array.from("motivation · consistency · community · ").map((char, index) => (
+                            <span key={index} style={{ '--index': index }}>
+                                {char === ' ' ? '\u00A0' : char}
+                            </span>
+                        ))}
                     </div>
                 </div>
-            </section>
+            </Hero>
+                
+                
 
             {/* Features Type Section */}
             <section className={`${styles.featuresSection} ${styles.featuresTypeSection}`}>
-                <div className={styles.typeHeader}>
-                    <SectionHeader 
-                        title="Designed for consistency, not overwhelm."
-                        description="Every feature in Sequorr is built to help you show up more often — without pressure or perfection. Instead of pushing harder, Sequorr focuses on making movement feel lighter, social, and sustainable."
-                    />
-                </div>
-
+                <SectionHeader 
+                    title="Designed for consistency, not overwhelm."
+                    description="Every feature in Sequorr is built to help you show up more often — without pressure or perfection. Instead of pushing harder, Sequorr focuses on making movement feel lighter, social, and sustainable."
+                />
                 <div className={styles.graphicContainer}>
                     <img src={Graphics} alt="graphics" />
                 </div>

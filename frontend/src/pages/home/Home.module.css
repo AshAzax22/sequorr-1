@@ -124,48 +124,11 @@
 }
 
 /* Responsive Optimization for Hero Section */
-@media (max-width: 1024px) {
-    .heroText {
-        gap: 12px;
-    }
-}
+@media (max-width: 1024px) {}
 
-@media (max-width: 768px) {
-    .heroContent {
-        gap: 16px;
-    }
-
-    .heroDescription {
-        max-width: 90%;
-        line-height: 1.3;
-    }
-
-    .buttonGroup {
-        gap: 16px;
-    }
-}
+@media (max-width: 768px) {}
 
 @media (max-width: 480px) {
-    .heroSection {
-        padding: 16px;
-    }
-
-    .heroContent {
-        gap: 12px;
-    }
-
-    .heroTagline {
-        padding: 8px 16px;
-    }
-
-    .buttonGroup {
-        flex-direction: column;
-        gap: 12px;
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .btnPrimary,
     .btnSecondary {
         width: 100%;
         text-align: center;
