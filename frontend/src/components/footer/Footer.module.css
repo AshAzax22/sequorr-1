@@ -19,7 +19,7 @@
     width: 100%;
     aspect-ratio: 1601 / 495;
     /* Matches the SVG dimensions */
-    background-image: url('../../assets/footer/Logo.svg');
+    background-image: url('../../assets/footer/logo.svg');
     background-size: contain;
     background-position: center bottom;
     background-repeat: no-repeat;
@@ -62,7 +62,7 @@
     /* Larger text as per image */
     font-weight: 800;
     font-style: italic;
-    color: #000;
+    color: #0C500F;
     text-transform: lowercase;
     display: flex;
     align-items: center;
@@ -73,7 +73,7 @@
 .marqueeContent i {
     font-style: normal;
     font-weight: 900;
-    color: rgba(0, 0, 0, 0.4);
+    color: #0C500F;
 }
 
 @keyframes marquee {
@@ -101,12 +101,10 @@
 
 .ctaTitle {
     font-size: clamp(20px, 5vw, 36px);
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.2;
-    background: linear-gradient(90deg, #fff, var(--primary-green));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    letter-spacing: -2px;
+    color: var(--primary-green);
 }
 
 .ctaText {
@@ -170,7 +168,6 @@
 .socialLinks a img {
     width: 20px;
     height: 20px;
-    filter: invert(0.7);
     opacity: 0.7;
 }
 

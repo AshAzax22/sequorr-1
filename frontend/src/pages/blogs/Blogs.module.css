@@ -1,74 +1,14 @@
-/* Blogs Hero Section Styles */
-.blogsHeroSection {
-    position: relative;
-    width: 100%;
-    height: 100dvh;
+.blogsContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 24px;
+    gap: 20px;
 }
 
-.blogsHeroBackground {
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-}
-
-.blogsHeroContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    pointer-events: none;
-    position: relative;
-    width: 100%;
-    padding: 0 16px;
-    z-index: 1;
-}
-
-.blogsHeroTagline {
-    border-radius: 50px;
-    background-color: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    padding: 10px 24px;
-    text-align: center;
-}
-
-.taglineText {
-    font-size: clamp(13px, 1.5vw, 16px);
-    font-weight: 300;
-    font-style: italic;
-    color: var(--primary-green);
-}
-
-.blogsHeroText {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-    width: 100%;
-}
-
-.blogsHeroTitle {
-    font-size: clamp(26px, 8vw, 44px);
-    font-weight: 700;
-    color: #FFFFFF;
-}
-
+/* Blogs Content Layout */
 .blogsHeroSubtitle {
-    font-size: clamp(16px, 3vw, 20px);
-    font-weight: 400;
-    color: #ffffff;
     max-width: 60%;
 }
+
 
 /* Base Button Styles */
 .btnPrimary {
@@ -93,38 +33,18 @@
 
 /* Responsive — Tablet */
 @media (max-width: 1024px) {
-    .blogsHeroText {
-        gap: 12px;
-    }
-
     .blogsHeroSubtitle {
         max-width: 80%;
     }
 }
 
 @media (max-width: 768px) {
-    .blogsHeroContent {
-        gap: 16px;
-    }
-
     .blogsHeroSubtitle {
         max-width: 90%;
     }
 }
 
 @media (max-width: 480px) {
-    .blogsHeroSection {
-        padding: 16px;
-    }
-
-    .blogsHeroContent {
-        gap: 12px;
-    }
-
-    .blogsHeroTagline {
-        padding: 8px 16px;
-    }
-
     .btnPrimary {
         width: 100%;
         text-align: center;

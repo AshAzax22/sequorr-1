@@ -7,6 +7,8 @@ import Option2 from '../../assets/believe/option2.svg'
 import Option3 from '../../assets/believe/option3.svg'
 import Option4 from '../../assets/believe/option4.svg'
 import Option5 from '../../assets/believe/option5.svg'
+import useScrollAnimation from '../../hooks/useScrollAnimation'
+import SectionHeader from '../sectionHeader/SectionHeader'
 
 const Believe = () => {
     const believes = [
@@ -41,18 +43,17 @@ const Believe = () => {
 
     const activeBelief = believes[activeIndex];
 
+    useScrollAnimation();
+
     return (
         <>
             {/* What We Believe Section */}
             <section className={styles.believeSection}>
                 <div className={styles.believeHeader}>
-                    <div className="sectionTitleContainer">
-                        <p className="sectionTitleText">What we believe</p>
-                    </div>
-
-                    <div className="sectionDescriptionContainer">
-                        <p className="sectionDescriptionText">These beliefs guide how Sequorr is designed — and how it should feel to use.</p>
-                    </div>
+                    <SectionHeader 
+                        title="What we believe"
+                        description="At Sequorr, we believe staying active doesn't have to be complicated, isolated, or perfect."
+                    />
                 </div>
 
                 <div className={styles.believeContent}>
@@ -74,7 +75,7 @@ const Believe = () => {
                     <div className={styles.believeBlockContent}>
                         <img className={styles.believeBlockContentImage} src={activeBelief.image} alt={activeBelief.title} />
                         <div className={styles.believeBlockContentOverlay}>
-                            <p className={styles.believeBlockContentText}>{activeBelief.description}</p>
+                            <p className={`${styles.believeBlockContentText} reveal`}>{activeBelief.description}</p>
                         </div>
                     </div>
                 </div>

@@ -1,98 +1,29 @@
-/* Features Hero Section Styles */
-.featuresSection {
-    position: relative;
-    width: 100%;
-    height: 100dvh;
+.featuresContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: 64px;
 }
 
-.featuresBackground {
-    z-index: -1;
+/* Features Section Styles */
+.featuresHeroSection {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+}
+
+.featuresSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 .featuresContent {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     height: 100%;
-    gap: 24px;
-    pointer-events: none;
-    position: relative;
-    width: 100%;
-    padding: 0 16px;
-}
-
-.featuresTagline {
-    border-radius: 50px;
-    background-color: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    padding: 10px 24px;
-    text-align: center;
-}
-
-.taglineText {
-    font-size: clamp(13px, 1.5vw, 16px);
-    font-weight: 300;
-    font-style: italic;
-    color: var(--primary-green);
-}
-
-.featuresText {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-}
-
-.featuresTitle {
-    font-size: clamp(26px, 8vw, 44px);
-    font-weight: 700;
-    color: #FFFFFF;
-}
-
-.featuresSubtitle {
-    font-size: clamp(16px, 3vw, 20px);
-    font-weight: 400;
-    color: #ffffff;
-}
-
-.featuresDescription {
-    font-size: clamp(14px, 2vw, 18px);
-    color: rgba(255, 255, 255, 0.6);
-    max-width: 600px;
-    line-height: 1.2;
-}
-
-/* Button Styles (merged duplicate rules) */
-.btnPrimary {
-    padding: 10px 20px;
-    border-radius: 100px;
-    font-size: clamp(13px, 2vw, 16px);
-    font-weight: 500;
-    cursor: pointer;
-    letter-spacing: 0.5px;
-    transition: var(--transition-smooth);
-    border: 2px solid rgba(255, 255, 255, 0.20);
-    color: #FFFFFF;
-    background: radial-gradient(50% 50% at 50% 50%, #86bb8d 0%, var(--dark-green) 100%);
-    box-shadow: 0 0 24px 0 rgba(var(--primary-green-rgb), 0.60);
-    pointer-events: auto;
-}
-
-.btnPrimary:hover {
-    background: radial-gradient(circle at 50% 50%, var(--primary-green), var(--primary-green));
-    transform: translateY(-2px);
 }
 
 /* Features Animation Styles */
@@ -165,68 +96,14 @@
 /* Responsive — Tablet */
 @media (max-width: 768px) {
     .featuresContent {
-        padding: 20px;
         gap: 22px;
-    }
-
-    .featuresAnimationContainer {
-        width: 240px;
-        height: 240px;
-    }
-
-    .featuresAnimation {
-        width: 130px;
-        height: 130px;
-        box-shadow: 0 0 250px 0 rgba(46, 238, 52, 0.45), 0 0 28px 0 #2EEE34;
-    }
-
-    .cssTextRing span {
-        transform: translate(-50%, -50%) rotate(calc(360deg / var(--total) * var(--index))) translateY(-88px);
-        font-size: 14px;
-    }
-
-    .featuresDescription {
-        max-width: 480px;
     }
 }
 
 /* Responsive — Mobile */
 @media (max-width: 480px) {
     .featuresContent {
-        padding: 16px;
         gap: 16px;
-    }
-
-    .featuresTagline {
-        padding: 8px 18px;
-    }
-
-    .featuresText {
-        gap: 8px;
-    }
-
-    .featuresAnimationContainer {
-        width: 200px;
-        height: 200px;
-    }
-
-    .featuresAnimation {
-        width: 100px;
-        height: 100px;
-        box-shadow: 0 0 180px 0 rgba(46, 238, 52, 0.40), 0 0 20px 0 #2EEE34;
-    }
-
-    .cssTextRing span {
-        transform: translate(-50%, -50%) rotate(calc(360deg / var(--total) * var(--index))) translateY(-72px);
-        font-size: 12px;
-    }
-
-    .featuresDescription {
-        max-width: 100%;
-    }
-
-    .btnPrimary {
-        padding: 8px 16px;
     }
 }
 
@@ -236,8 +113,7 @@
     min-height: 100dvh;
     padding: 100px 40px 60px;
     flex-direction: column;
-    justify-content: space-around;
-    gap: 48px;
+    justify-content: space-between;
     background-image: url('../../assets/feature/verticalArcL.svg'), url('../../assets/feature/graphics.svg'), url('../../assets/feature/verticalArcR.svg');
     background-size: contain, 650px, contain;
     background-position: left, center, right;
@@ -250,6 +126,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px 0;
+    background-color: red;
 }
 
 .graphicContainer img {
@@ -306,8 +183,7 @@
     gap: 12px;
     margin-top: 8px;
     background-color: rgba(var(--primary-green-rgb), 0.4);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
+
     padding: 6px;
     text-align: center;
     border-radius: 1000px;
@@ -316,24 +192,30 @@
 .typeTagItem {
     cursor: pointer;
     transition: var(--transition-smooth);
-    color: rgba(255, 255, 255, 0.6);
+    color: white;
     font-size: clamp(12px, 1.5vw, 14px);
-    font-weight: 500;
     position: relative;
     padding: 8px 20px;
     white-space: nowrap;
     user-select: none;
+    border-radius: 1000px;
 }
 
 .typeTagItem:hover {
     color: #FFFFFF;
+    background-color: rgba(0, 255, 34, 0.3);
+
 }
 
 .typeTagItemActive {
     color: #FFFFFF;
-    font-weight: 600;
-    background-color: rgba(var(--primary-green-rgb), 1);
-    border-radius: 1000px;
+    background-color: rgba(var(--primary-green-rgb), 0.6);
+
+}
+
+.typeTagItemActive:hover {
+    color: #FFFFFF;
+    background-color: rgba(var(--primary-green-rgb), 0.6);
 }
 
 /* Feature Type — Hide side arcs (medium screens) */
@@ -545,7 +427,7 @@
     position: relative;
     z-index: 2;
     font-size: clamp(14px, 1.5vw, 18px);
-    font-weight: 500;
+    /* font-weight: 500; */
     color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
     transition: var(--transition-smooth);
@@ -556,14 +438,14 @@
 }
 
 .featuresGalleryGridItemFourText:hover {
-    color: #FFFFFF;
+    /* color: #FFFFFF; */
     background-color: rgba(255, 255, 255, 0.05);
 }
 
 .activeTimeText {
     color: var(--primary-green) !important;
     background-color: rgba(var(--primary-green-rgb), 0.1) !important;
-    font-weight: 700;
+    /* font-weight: 700; */
 }
 
 /* Responsiveness */

@@ -14,7 +14,7 @@
   --border-subtle: rgba(var(--primary-green-rgb), 0.2);
   --border-active: rgba(var(--primary-green-rgb), 0.4);
   --glass-bg: rgba(var(--primary-green-rgb), 0.1);
-  --glass-blur: blur(12px);
+  --glass-blur: blur(4px);
 
   /* Transitions */
   --transition-smooth: all 0.3s ease;
@@ -59,28 +59,23 @@ input {
   display: none;
 }
 
-.sectionTitleContainer {
-  width: fit-content;
-  border-radius: 50px;
-  background-color: var(--glass-bg);
-  padding: 10px 20px;
-  text-align: center;
-  border: 1px solid var(--border-subtle);
+
+
+/* Scroll Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
-.sectionTitleText {
-  font-size: clamp(13px, 1.5vw, 16px);
-  font-weight: 500;
-  color: #FFFFFF;
+.revealVisible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
-.sectionDescriptionContainer {
-  max-width: 800px;
-  text-align: center;
-}
-
-.sectionDescriptionText {
-  font-size: clamp(13px, 2vw, 16px);
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.6;
+.headerFadeOut {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
 }

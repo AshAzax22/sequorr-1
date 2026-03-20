@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from './Footer.module.css'
 
-import Logo from '../../assets/footer/Logo.svg'
 import Insta from '../../assets/footer/insta.svg'
 import Facebook from '../../assets/footer/facebook.svg'
 import Reddit from '../../assets/footer/reddit.svg'
 import X from '../../assets/footer/x.svg'
 import Mail from '../../assets/footer/mail.svg'
+import JoinButton from '../joinButton/JoinButton'
 
 const Footer = () => {
     return (
@@ -45,7 +45,7 @@ const Footer = () => {
                 <p className={styles.ctaText}>
                     Sequorr is building a community where fitness feels human, social, and sustainable.
                 </p>
-                <button className={styles.ctaButton}>Join the movement</button>
+                <JoinButton />
             </div>
 
             <div className={styles.footerBottom}>

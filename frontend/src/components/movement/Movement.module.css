@@ -1,12 +1,14 @@
 .movementSection {
-    position: relative;
-    width: 100%;
+    box-sizing: border-box;
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 32px;
-    margin: 80px 0;
     padding: 0 24px;
+    aspect-ratio: 20/9;
+    margin:auto;
+
 }
 
 .movementShowcase {
@@ -16,10 +18,10 @@
     height: 550px;
     border-radius: 24px;
     border: 4px solid rgba(var(--primary-green-rgb), 0.30);
-    transition: var(--transition-smooth);
-    margin-top: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
     padding: 40px;
     overflow: hidden;
+    will-change: transform, border-color, box-shadow;
 
     display: flex;
     flex-direction: column;
@@ -33,16 +35,14 @@
     background-repeat: no-repeat;
 }
 
-.movementShowcase:hover {
+/* .movementShowcase:hover {
     border-color: rgba(var(--primary-green-rgb), 0.60);
-    box-shadow: 0 0 50px rgba(var(--primary-green-rgb), 0.15);
-    background-position: center bottom 10px, center 22%;
+    box-shadow: 0 0 30px rgba(var(--primary-green-rgb), 0.1);
 }
 
 .movementShowcase:hover .communityTag {
-    transform: scale(1.05);
-    background-color: rgba(var(--primary-green-rgb), 0.3);
-}
+    opacity: 1;
+} */
 
 .movementShowcase::before {
     content: "";
@@ -60,6 +60,8 @@
 
     opacity: 0.5;
     z-index: -1;
+    filter: blur(15px);
+    transform: translateZ(0);
 }
 
 .missionHeading {
@@ -78,8 +80,8 @@
     align-items: center;
     font-weight: 300;
     gap: 10px;
-    background-color: rgba(var(--primary-green-rgb), 0.2);
-    backdrop-filter: var(--glass-blur);
+    background-color: rgba(0, 255, 47, 0.292);
+    border: 1px solid rgba(var(--primary-green-rgb), 0.3);
     padding: 10px 20px;
     border-radius: 100px;
     white-space: nowrap;
@@ -179,8 +181,10 @@
 
 @media screen and (max-width: 768px) {
     .movementSection {
-        margin: 40px 0;
+        margin: 40px auto;
         gap: 24px;
+        width: 80%;
+        padding:0;
     }
 
     .movementShowcase {

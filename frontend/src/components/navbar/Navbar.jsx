@@ -1,9 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import styles from './Navbar.module.css'
-import Logo from '../../assets/navbar/logo.svg'
+import Logo from '../../assets/navbar/logo.svg';
 
 const Navbar = () => {
+    const navigate = useNavigate();
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const navRef = React.useRef(null);
 
@@ -11,8 +12,9 @@ const Navbar = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    const closeMenu = () => {
+    const handleNavigation = (path) => {
         setIsMenuOpen(false);
+        navigate(path);
     };
 
     React.useEffect(() => {
@@ -30,7 +32,7 @@ const Navbar = () => {
 
     return (
         <nav ref={navRef} className={`${styles.navbar} ${isMenuOpen ? styles.navActive : ''}`} aria-label="Main Navigation">
-            <div className={styles.navLogo}>
+            <div className={styles.navLogo} onClick={() => handleNavigation('/')} style={{ cursor: 'pointer' }}>
                 <img src={Logo} alt="Sequorr logo" />
             </div>
 
@@ -49,11 +51,11 @@ const Navbar = () => {
                 className={`${styles.navLinks} ${isMenuOpen ? styles.active : ''}`}
                 role="navigation"
             >
-                <Link to="/" className={styles.navLink} onClick={closeMenu}>Home</Link>
-                <Link to="/about" className={styles.navLink} onClick={closeMenu}>About</Link>
-                <Link to="/features" className={styles.navLink} onClick={closeMenu}>Features</Link>
-                <Link to="/blogs" className={styles.navLink} onClick={closeMenu}>Blogs</Link>
-                <Link to="/contact" className={styles.navLink} onClick={closeMenu}>Contact</Link>
+                <div className={styles.navLink} onClick={() => handleNavigation('/')}>Home</div>
+                <div className={styles.navLink} onClick={() => handleNavigation('/about')}>About</div>
+                <div className={styles.navLink} onClick={() => handleNavigation('/features')}>Features</div>
+                <div className={styles.navLink} onClick={() => handleNavigation('/blogs')}>Blogs</div>
+                <div className={styles.navLink} onClick={() => handleNavigation('/contact')}>Contact</div>
             </div>
         </nav>
     )

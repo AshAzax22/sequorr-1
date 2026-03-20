@@ -29,7 +29,6 @@
     border-radius: 8px;
     background-color: #00BA06;
     transition: var(--transition-smooth);
-    overflow: hidden;
     display: flex;
     flex-direction: column;
 }
@@ -111,31 +110,32 @@
     position: relative;
     width: 100%;
     height: 0;
-    border-radius: 8px;
+    border-radius: 8px 8px 0 0;
     background: linear-gradient(0deg, #0A710D 0%, #2EEE34 100%);
     bottom: 0;
     transition: height 0.6s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-.motivationCard:nth-child(2):hover .cardBarContainer .cardBar:nth-child(1) {
+.motivationCard:hover .cardBarContainer .cardBar:nth-child(1) {
     height: 50%;
 }
 
-.motivationCard:nth-child(2):hover .cardBarContainer .cardBar:nth-child(2) {
+.motivationCard:hover .cardBarContainer .cardBar:nth-child(2) {
     height: 80%;
 }
 
-.motivationCard:nth-child(2):hover .cardBarContainer .cardBar:nth-child(3) {
+.motivationCard:hover .cardBarContainer .cardBar:nth-child(3) {
     height: 60%;
 }
 
-.motivationCard:nth-child(2):hover .cardBarContainer .cardBar:nth-child(4) {
+.motivationCard:hover .cardBarContainer .cardBar:nth-child(4) {
     height: 80%;
 }
 
-.motivationCard:nth-child(2):hover .cardBarContainer .cardBar:nth-child(5) {
+.motivationCard:hover .cardBarContainer .cardBar:nth-child(5) {
     height: 100%;
 }
+
 
 .motivationCard:nth-child(2) .cardHighlightText,
 .motivationCard:nth-child(4) .cardHighlightText,
@@ -180,6 +180,11 @@
     line-height: 2;
     border-radius: 6px;
     font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.motivationCard:nth-child(3) .dayPhaseNavItem:hover {
+    color: #00ff0d;
 }
 
 .motivationCard:nth-child(3) .dayPhaseNavItem::after {

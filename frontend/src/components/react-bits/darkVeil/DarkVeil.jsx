@@ -81,7 +81,7 @@ export default function DarkVeil({
   speed = 0.5,
   scanlineFrequency = 0,
   warpAmount = 0,
-  resolutionScale = 1
+  resolutionScale = 0.5
 }) {
   const ref = useRef(null);
   useEffect(() => {
@@ -115,7 +115,9 @@ export default function DarkVeil({
     const resize = () => {
       const w = parent.clientWidth,
         h = parent.clientHeight;
-      renderer.setSize(w * resolutionScale, h * resolutionScale);
+      renderer.setSize(w * resolutionScale, h * resolutionScale, false);
+      canvas.style.width = '100%';
+      canvas.style.height = '100%';
       program.uniforms.uResolution.value.set(w, h);
     };
 

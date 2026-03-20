@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import styles from './Motivation.module.css'
-
-import Pointer from '../../assets/movement/pointer.svg'
+import useScrollAnimation from '../../hooks/useScrollAnimation'
 import Box8Button from '../../assets/motivation/box8button.svg'
+import SectionHeader from '../sectionHeader/SectionHeader'
 import Stepper, { Step } from '../../components/react-bits/stepper/Stepper'
 
 const Motivation = () => {
     const [activePhase, setActivePhase] = useState('Morning')
     const [activityIndex, setActivityIndex] = useState(0)
+
+    useScrollAnimation();
 
     const activities = ['Running', 'Swimming', 'Cycling', 'Yoga']
 
@@ -25,20 +27,17 @@ const Motivation = () => {
         <>
             {/* Motivation Section */}
             <section className={styles.motivationSection}>
-                <div className="sectionTitleContainer">
-                    <p className="sectionTitleText">What you will experience</p>
-                </div>
-
-                <div className="sectionDescriptionContainer">
-                    <p className="sectionDescriptionText">Not just features — real feelings that keep you coming back.</p>
-                </div>
+                <SectionHeader 
+                    title="Motivation without pressure"
+                    description={<>See what your friends are doing. Share your own moments.<br />It's not about being the best — it's about moving together.</>}
+                />
 
                 <div className={styles.motivationShowcase}>
                     <div className={styles.motivationCard}>
-                        <h2 className={styles.cardTitle}>Consistency Without Burnout</h2>
-                        <p className={styles.cardTagline}>You'll feel more consistent</p>
-                        <p className={styles.cardDescription}>Small wins start to add up when fitness fits into your life not the other way around.</p>
-                        <p className={styles.cardHighlightText}>Progress, at your pace.</p>
+                        <h2 className={`${styles.cardTitle} reveal`}>Consistency Without Burnout</h2>
+                        <p className={`${styles.cardTagline} reveal`}>You'll feel more consistent</p>
+                        <p className={`${styles.cardDescription} reveal`}>Small wins start to add up when fitness fits into your life not the other way around.</p>
+                        {/* <p className={`${styles.cardHighlightText} reveal`}>Progress, at your pace.</p> */}
                     </div>
 
                     <div className={styles.motivationCard}>
@@ -51,7 +50,7 @@ const Motivation = () => {
                             <div className={styles.cardBar}></div>
                             <div className={styles.cardBar}></div>
                         </div>
-                        <p className={styles.cardHighlightText}>Growth beyond metrics.</p>
+                        {/* <p className={styles.cardHighlightText}>Growth beyond metrics.</p> */}
                     </div>
 
                     <div className={styles.motivationCard}>
@@ -77,10 +76,10 @@ const Motivation = () => {
                     </div>
 
                     <div className={styles.motivationCard}>
-                        <h2 className={styles.cardTitle}>Motivation That Lasts</h2>
-                        <p className={styles.cardTagline}>You'll stay motivated longer</p>
-                        <p className={styles.cardDescription}>Shared challenges and visible effort keep the spark alive — even on low-energy days.</p>
-                        <p className={styles.cardHighlightText}>Your journey, your rules.</p>
+                        <h2 className={`${styles.cardTitle} reveal`}>Motivation That Lasts</h2>
+                        <p className={`${styles.cardTagline} reveal`}>You'll stay motivated longer</p>
+                        <p className={`${styles.cardDescription} reveal`}>Shared challenges and visible effort keep the spark alive — even on low-energy days.</p>
+                        {/* <p className={`${styles.cardHighlightText} reveal`}>Your journey, your rules.</p> */}
                     </div>
 
                     <div className={styles.motivationCard}>
@@ -112,7 +111,7 @@ const Motivation = () => {
                             </Step>
                         </Stepper>
 
-                        <p className={styles.cardHighlightText}>Movement becomes a habit.</p>
+                        {/* <p className={styles.cardHighlightText}>Movement becomes a habit.</p> */}
                     </div>
 
                     <div className={styles.motivationCard}>
@@ -138,7 +137,7 @@ const Motivation = () => {
                                 onClick={handleNextActivity}
                             />
                         </div>
-                        <p className={styles.cardHighlightText}>Try your options.</p>
+                        {/* <p className={styles.cardHighlightText}>Try your options.</p> */}
                     </div>
                 </div>
             </section >
