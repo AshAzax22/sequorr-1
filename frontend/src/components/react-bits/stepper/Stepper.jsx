@@ -8,6 +8,7 @@ export default function Stepper({
   initialStep = 1,
   onStepChange = () => {},
   onFinalStepCompleted = () => {},
+  onBackAtFirstStep,
   stepCircleContainerClassName = '',
   stepContainerClassName = '',
   contentClassName = '',
@@ -41,6 +42,8 @@ export default function Stepper({
     if (currentStep > 1) {
       setDirection(-1);
       updateStep(currentStep - 1);
+    } else if (onBackAtFirstStep) {
+      onBackAtFirstStep();
     }
   };
 
@@ -114,11 +117,12 @@ export default function Stepper({
             <div className="footer-nav spread">
               <button
                 onClick={handleBack}
-                className={`back-button ${currentStep === 1 ? 'inactive' : ''}`}
+                className={`back-button ${currentStep === 1 && !onBackAtFirstStep ? 'inactive' : ''}`}
                 {...backButtonProps}
               >
                 {backButtonText}
               </button>
+
               <button onClick={isLastStep ? handleComplete : handleNext} className="next-button" {...nextButtonProps}>
                 {isLastStep ? 'Complete' : nextButtonText}
               </button>
@@ -176,7 +180,7 @@ function SlideTransition({ children, direction, onHeightReady }) {
 
 const stepVariants = {
   enter: dir => ({
-    x: dir >= 0 ? '-100%' : '100%',
+    x: dir >= 0 ? '100%' : '-100%',
     opacity: 0
   }),
   center: {
@@ -184,10 +188,11 @@ const stepVariants = {
     opacity: 1
   },
   exit: dir => ({
-    x: dir >= 0 ? '50%' : '-50%',
+    x: dir >= 0 ? '-50%' : '50%',
     opacity: 0
   })
 };
+
 
 export function Step({ children }) {
   return <div className="step-default">{children}</div>;

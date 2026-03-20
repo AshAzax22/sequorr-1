@@ -22,7 +22,49 @@ import JoinTheMovement from "./components/joinTheMovement/JoinTheMovement";
 function App() {
   return (
     <ModalProvider>
-      <Toaster position="top-center" containerStyle={{ zIndex: 10001 }} />
+      <Toaster 
+        position="top-center" 
+        containerStyle={{ zIndex: 10001 }}
+        toastOptions={{
+          style: {
+            background: '#0a0a0a',
+            color: '#fff',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            backdropFilter: 'blur(10px)',
+            borderRadius: '16px',
+            padding: '12px 24px',
+            fontSize: '0.95rem',
+            fontWeight: '500',
+            boxShadow: '0 10px 40px rgba(0, 0, 0, 0.5)',
+            maxWidth: '400px'
+          },
+          success: {
+            iconTheme: {
+              primary: '#2EEE34',
+              secondary: '#000',
+            },
+            style: {
+              border: '1px solid rgba(46, 238, 52, 0.3)',
+              boxShadow: '0 0 20px rgba(46, 238, 52, 0.15), 0 10px 40px rgba(0, 0, 0, 0.5)'
+            }
+          },
+          error: {
+            iconTheme: {
+              primary: '#ff4b4b',
+              secondary: '#fff',
+            },
+            style: {
+              border: '1px solid rgba(255, 75, 75, 0.3)',
+              boxShadow: '0 0 20px rgba(255, 75, 75, 0.1), 0 10px 40px rgba(0, 0, 0, 0.5)'
+            }
+          },
+          loading: {
+            style: {
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+            }
+          }
+        }}
+      />
       <Router>
         <Suspense fallback={<Loading />}>
           <Routes>
