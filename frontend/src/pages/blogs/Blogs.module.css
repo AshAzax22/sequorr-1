@@ -4,11 +4,11 @@
     gap: 20px;
 }
 
-/* Blogs Hero Section Styles */
-/* Blogs Hero Section Styles overrides */
+/* Blogs Content Layout */
 .blogsHeroSubtitle {
     max-width: 60%;
 }
+
 
 /* Base Button Styles */
 .btnPrimary {

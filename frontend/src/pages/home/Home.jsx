@@ -23,7 +23,7 @@ const Home = () => {
     return (
         <>
             <Navbar />
-            <div className={styles.heroContainer}>
+            <div className={styles.pageContainer}>
                 {/* Hero section */}
             <Hero 
                 background={

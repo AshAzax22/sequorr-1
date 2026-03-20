@@ -1,96 +1,10 @@
-/* Hero Section Styles */
-.heroContainer {
+/* Page Layout */
+.pageContainer {
     display: flex;
     flex-direction: column;
     gap: 64px;
 }
 
-.heroSection {
-    position: relative;
-    width: 100%;
-    height: 100dvh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 24px;
-    overflow: hidden;
-}
-
-.heroBackground {
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-}
-
-.heroContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    pointer-events: none;
-    position: relative;
-    width: 100%;
-    padding: 0 16px;
-    z-index: 1;
-}
-
-
-.heroTagline {
-    border-radius: 50px;
-    background-color: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    padding: 10px 24px;
-    text-align: center;
-}
-
-.taglineText {
-    font-size: clamp(13px, 1.5vw, 16px);
-    font-weight: 300;
-    font-style: italic;
-    color: var(--primary-green);
-}
-
-
-.heroText {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-}
-
-.heroTitle {
-    height: clamp(36px, 8vw, 64px);
-    width: auto;
-    object-fit: contain;
-}
-
-.heroSubtitle {
-    font-size: clamp(18px, 3vw, 24px);
-    font-weight: 500;
-    color: #FFFFFF;
-    font-style: italic;
-}
-
-.heroDescription {
-    font-size: clamp(14px, 2vw, 18px);
-    color: #FFFFFF;
-    max-width: 600px;
-    line-height: 1.6;
-}
-
-.buttonGroup {
-    display: flex;
-    gap: 24px;
-    pointer-events: auto;
-    flex-wrap: wrap;
-    justify-content: center;
-}
 
 /* Base Button Styles */
 .btnSecondary {

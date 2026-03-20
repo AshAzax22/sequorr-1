@@ -4,6 +4,7 @@
     gap: 64px;
 }
 
+/* Features Section Styles */
 .featuresHeroSection {
     display: flex;
     flex-direction: column;

@@ -116,25 +116,26 @@
     transition: height 0.6s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-.barsVisible.cardBarContainer .cardBar:nth-child(1) {
+.motivationCard:hover .cardBarContainer .cardBar:nth-child(1) {
     height: 50%;
 }
 
-.barsVisible.cardBarContainer .cardBar:nth-child(2) {
+.motivationCard:hover .cardBarContainer .cardBar:nth-child(2) {
     height: 80%;
 }
 
-.barsVisible.cardBarContainer .cardBar:nth-child(3) {
+.motivationCard:hover .cardBarContainer .cardBar:nth-child(3) {
     height: 60%;
 }
 
-.barsVisible.cardBarContainer .cardBar:nth-child(4) {
+.motivationCard:hover .cardBarContainer .cardBar:nth-child(4) {
     height: 80%;
 }
 
-.barsVisible.cardBarContainer .cardBar:nth-child(5) {
+.motivationCard:hover .cardBarContainer .cardBar:nth-child(5) {
     height: 100%;
 }
+
 
 .motivationCard:nth-child(2) .cardHighlightText,
 .motivationCard:nth-child(4) .cardHighlightText,

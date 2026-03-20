@@ -91,7 +91,7 @@
 
 .heroDescription {
     font-size: clamp(14px, 2vw, 18px);
-    color: rgba(255, 255, 255, 0.6);
+    color: #cfcfcf;
     max-width: 600px;
     line-height: 1.6;
 }

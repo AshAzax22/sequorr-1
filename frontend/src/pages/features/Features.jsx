@@ -131,7 +131,6 @@ const Features = () => {
                 description="Sequorr combines movement, motivation, and community into one simple experience designed for real life."
                 actions={<JoinButton />}
                 className={styles.featuresHeroSection}
-                // contentClassName={styles.featuresContent}
             >
                 <div className={styles.featuresAnimationContainer}>
                     <div className={styles.featuresAnimation}></div>
