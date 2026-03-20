@@ -61,6 +61,7 @@ const JoinTheMovement = () => {
     const { isJoinModalOpen, closeJoinModal } = useModal();
     const [started, setStarted] = useState(false);
     const [completed, setCompleted] = useState(false);
+    const [submissionError, setSubmissionError] = useState(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [formData, setFormData] = useState({
         email: '',
@@ -72,9 +73,13 @@ const JoinTheMovement = () => {
     // Reset state when modal closes
     useEffect(() => {
         if (!isJoinModalOpen) {
+            // Re-enable background scrolling
+            document.body.style.overflow = 'auto'; 
+            
             const timer = setTimeout(() => {
                 setStarted(false);
                 setCompleted(false);
+                setSubmissionError(null);
                 setIsSubmitting(false);
                 setCurrentStep(1);
                 setFormData({ email: '', goal: '', time: 'Morning' });
@@ -85,6 +90,7 @@ const JoinTheMovement = () => {
             document.body.style.overflow = 'hidden';
         }
     }, [isJoinModalOpen]);
+
 
     // Re-enable scrolling on cleanup
     useEffect(() => {
@@ -106,6 +112,7 @@ const JoinTheMovement = () => {
 
         setIsSubmitting(true);
         const loadingToast = toast.loading('Adding you to the waitlist...');
+        setSubmissionError(null);
 
         try {
             // Map internal IDs to labels/descriptions for the API
@@ -139,14 +146,18 @@ const JoinTheMovement = () => {
             if (response.ok || data.success === true) {
                 toast.success(data.message || 'You have been added to the waitlist! 🎉', { id: loadingToast });
                 setCompleted(true);
+                setSubmissionError(null);
             } else {
                 // The API might return errors in 'errors' array or 'message' string
                 const errorMsg = data.message || (data.errors && data.errors[0]) || 'Something went wrong. Please try again.';
                 toast.error(errorMsg, { id: loadingToast });
+                setSubmissionError(errorMsg);
             }
         } catch (error) {
             console.error('Submission error:', error);
-            toast.error('Network error. Our servers might be busy — please try again later.', { id: loadingToast });
+            const msg = 'Network error. Our servers might be busy — please try again later.';
+            toast.error(msg, { id: loadingToast });
+            setSubmissionError(msg);
         } finally {
             setIsSubmitting(false);
         }
@@ -158,6 +169,7 @@ const JoinTheMovement = () => {
 
     const getFooterNote = () => {
         if (completed) return 'Fitness feels better together.';
+        if (submissionError) return 'We couldn’t quite make the move.';
         if (!started) return 'Join early and move with people like you.';
         
         switch (currentStep) {
@@ -240,6 +252,31 @@ const JoinTheMovement = () => {
                                     <button className={styles.btnPrimary} onClick={closeJoinModal}>
                                         Explore what's coming
                                     </button>
+                                </motion.div>
+                            ) : submissionError ? (
+                                <motion.div
+                                    key="error"
+                                    className={styles.welcomeContainer}
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 0.95 }}
+                                >
+                                    <div className={styles.errorIcon}>
+                                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="12" cy="12" r="10" stroke="#ff4d4d" strokeWidth="2.5" />
+                                            <line x1="12" y1="8" x2="12" y2="12" stroke="#ff4d4d" strokeWidth="2.5" strokeLinecap="round" />
+                                            <circle cx="12" cy="16" r="1.25" fill="#ff4d4d" />
+                                        </svg>
+                                    </div>
+                                    <h1 className={styles.mainTitle}>Move interrupted.</h1>
+                                    <p className={`${styles.description} ${styles.errorText}`}>
+                                        {submissionError}
+                                    </p>
+                                    <div className={styles.errorButtons}>
+                                        <button className={styles.btnPrimary} onClick={() => setSubmissionError(null)}>
+                                            Try again
+                                        </button>
+                                    </div>
                                 </motion.div>
                             ) : (
                                 <motion.div
@@ -343,6 +380,7 @@ const JoinTheMovement = () => {
                                     </Stepper>
                                 </motion.div>
                             )}
+
                         </AnimatePresence>
                     </div>
                     <AnimatePresence mode="wait">
