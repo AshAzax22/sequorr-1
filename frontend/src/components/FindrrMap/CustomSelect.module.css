@@ -1,0 +1,95 @@
+.container {
+    position: relative;
+    min-width: 160px;
+}
+
+.trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border-radius: 12px;
+    padding: 0.6rem 1rem;
+    font-family: inherit;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.trigger:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.trigger.open {
+    border-color: var(--brand-primary);
+    background: rgba(46, 238, 52, 0.05);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--brand-primary);
+    border-top: none;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-height: 250px;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0.5rem 0;
+    list-style: none;
+}
+
+.option {
+    padding: 0.6rem 1rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.option:hover {
+    background: var(--brand-primary);
+    color: #000;
+}
+
+.option.selected {
+    background: rgba(46, 238, 52, 0.1);
+    color: var(--brand-primary);
+    font-weight: 600;
+}
+
+.option.selected:hover {
+    background-color: var(--brand-primary);
+    color: var(--bg-base);
+}
+
+/* Scrollbar within tags dropdown */
+.dropdown::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdown::-webkit-scrollbar-track {
+    background: var(--bg-surface-active);
+}
+
+.dropdown::-webkit-scrollbar-thumb {
+    background: var(--border-color-hover);
+    border-radius: var(--radius-sm);
+}
+
+.dropdown::-webkit-scrollbar-thumb:hover {
+    background: var(--fg-muted);
+}

@@ -12,6 +12,7 @@ import useScrollAnimation from '../../hooks/useScrollAnimation'
 import JoinButton from '../../components/joinButton/JoinButton'
 import SectionHeader from '../../components/sectionHeader/SectionHeader'
 import Hero from '../../components/hero/Hero'
+import ExploreFindrr from '../../components/exploreFindrr/ExploreFindrr'
 
 // morning
 import MorningGrid1 from '../../assets/feature/gallery/morning/grid1.svg'
@@ -231,6 +232,9 @@ const Features = () => {
 
             {/* Motivation Section */}
             <Motivation />
+
+            {/* Explore Findrr Section */}
+            <ExploreFindrr />
 
             {/* Footer Section */}
             <Footer />

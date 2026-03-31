@@ -14,6 +14,7 @@ const About = lazy(() => import("./pages/about/About"));
 const Blogs = lazy(() => import("./pages/blogs/Blogs"));
 const ContactUs = lazy(() => import("./pages/contactUs/ContactUs"));
 const Blog = lazy(() => import("./pages/blog/Blog"));
+const FindrrMap = lazy(() => import("./pages/findrr/FindrrMap"));
 
 import Loading from "./components/loading/Loading";
 import { ModalProvider } from "./context/ModalContext";
@@ -74,6 +75,7 @@ function App() {
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/blog/:slug" element={<Blog />} />
+            <Route path="/findrr" element={<FindrrMap />} />
           </Routes>
         </Suspense>
       </Router>

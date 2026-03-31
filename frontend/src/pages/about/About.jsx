@@ -19,6 +19,7 @@ import useScrollAnimation from '../../hooks/useScrollAnimation'
 import JoinButton from '../../components/joinButton/JoinButton'
 import SectionHeader from '../../components/sectionHeader/SectionHeader'
 import Hero from '../../components/hero/Hero'
+import ExploreFindrr from '../../components/exploreFindrr/ExploreFindrr'
 
 const About = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -168,6 +169,9 @@ const About = () => {
 
             {/* Movement Section */}
             < Movement />
+
+            {/* Explore Findrr Section */}
+            <ExploreFindrr />
             </div>
 
             

@@ -1,0 +1,227 @@
+.findrrSection {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.exploreContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 32px;
+}
+
+.exploreCard {
+    background: #000000;
+    border: 1px solid rgba(46, 238, 52, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    transition: all 0.4s ease;
+    min-height: 480px;
+
+}
+
+.exploreCard:hover {
+    border-color: rgba(46, 238, 52, 0.4);
+    box-shadow: 0 10px 50px -10px rgba(46, 238, 52, 0.15);
+}
+
+.textContent {
+    flex: 1;
+    padding: 20px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+    background-image: radial-gradient(circle at bottom left, #007e0f 0%, transparent 50%);
+
+}
+
+.cardTitle {
+    font-size: 32px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+}
+
+.cardDescription {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 90%;
+    font-weight: 400;
+}
+
+.featuresList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.featureItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.iconBox {
+    background: rgba(46, 238, 52, 0.1);
+    color: #2EEE34;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(46, 238, 52, 0.2);
+}
+
+.exploreBtn {
+    padding: 10px 16px;
+    border-radius: 100px;
+    font-size: clamp(13px, 2vw, 16px);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-smooth, all 0.3s ease);
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(26, 187, 4, 0.626);
+    background: radial-gradient(50% 50% at 50% 50%, #3bef41 0%, #67f96c 100%);
+    box-shadow: 0 0 24px 0 rgba(46, 238, 52, 0.60);
+    letter-spacing: -1px;
+    pointer-events: auto;
+    width: fit-content;
+}
+
+.exploreBtn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.5;
+    pointer-events: none;
+    animation: popping 1s infinite;
+}
+
+@keyframes popping {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(10);
+        opacity: 0;
+    }
+}
+
+.exploreBtn:hover {
+    transform: translateY(-2px);
+}
+
+.exploreBtn:active {
+    transform: translateY(2px);
+}
+
+.visualContent {
+    flex: 1;
+    position: relative;
+    background: #000;
+    overflow: hidden;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.realMap {
+    height: 100% !important;
+    width: 100% !important;
+    background: #000 !important;
+    z-index: 1;
+}
+
+.mapOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, transparent 20%),
+        linear-gradient(to left, rgba(0, 0, 0, 0.4) 0%, transparent 10%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.customMarker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.markerInner {
+    width: 14px;
+    height: 14px;
+    background-color: #2EEE34;
+    border: 3px solid #000;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #2EEE34, 0 0 30px rgba(46, 238, 52, 0.4);
+}
+
+:global(.leaflet-container) {
+    background: #000 !important;
+    font-family: inherit;
+}
+
+:global(.leaflet-control-attribution) {
+    display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .exploreCard {
+        flex-direction: column;
+    }
+
+    .visualContent {
+        min-height: 300px;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .textContent {
+        padding: 32px;
+    }
+
+    .cardDescription {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .textContent {
+        padding: 24px;
+    }
+
+    .cardTitle {
+        font-size: 24px;
+    }
+
+    .exploreBtn {
+        width: 100%;
+        text-align: center;
+    }
+}
