@@ -13,6 +13,7 @@ import JoinButton from '../../components/joinButton/JoinButton'
 import SectionHeader from '../../components/sectionHeader/SectionHeader'
 import Hero from '../../components/hero/Hero'
 import ExploreFindrr from '../../components/exploreFindrr/ExploreFindrr'
+import SEO from '../../components/seo/SEO'
 
 // morning
 import MorningGrid1 from '../../assets/feature/gallery/morning/grid1.svg'
@@ -112,6 +113,11 @@ const Features = () => {
 
     return (
         <>
+            <SEO 
+                title="Features" 
+                description="Designed for consistency, not overwhelm. Every feature in Sequorr is built to help you show up more often without pressure or perfection."
+                url="https://sequorr.com/features"
+            />
             <Navbar />
             <div className={styles.featuresContainer}>
                 {/* Features Hero section */}

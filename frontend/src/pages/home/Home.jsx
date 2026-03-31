@@ -15,14 +15,36 @@ import JoinButton from '../../components/joinButton/JoinButton'
 import SectionHeader from '../../components/sectionHeader/SectionHeader'
 import Hero from '../../components/hero/Hero'
 import ExploreFindrr from '../../components/exploreFindrr/ExploreFindrr'
+import SEO from '../../components/seo/SEO'
 
 const Home = () => {
     const navigate = useNavigate();
 
     useScrollAnimation();
 
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Sequorr",
+        "url": "https://sequorr.com",
+        "logo": "https://sequorr.com/logo.svg",
+        "sameAs": [
+            "https://twitter.com/sequorr",
+            "https://instagram.com/sequorr"
+        ]
+    };
+
     return (
         <>
+            <SEO 
+                title="Track it. Share it. Own it." 
+                description="A community-first fitness app built for everyday movement, not just numbers. Track your fitness, share with friends, and own your progress."
+                url="https://sequorr.com"
+            >
+                <script type="application/ld+json">
+                    {JSON.stringify(jsonLd)}
+                </script>
+            </SEO>
             <Navbar />
             <div className={styles.pageContainer}>
                 {/* Hero section */}

@@ -10,10 +10,16 @@ import Movement from '../../components/movement/Movement'
 import Footer from '../../components/footer/Footer'
 import JoinButton from '../../components/joinButton/JoinButton'
 import Hero from '../../components/hero/Hero'
+import SEO from '../../components/seo/SEO'
 
 const Blogs = () => {
     return (
         <>
+            <SEO 
+                title="Blog" 
+                description="Thoughts, experiences, and reflections on staying active — together. Written for real life, not perfect routines."
+                url="https://sequorr.com/blogs"
+            />
             <Navbar />
             {/* Blogs Hero section */}
             <div className={styles.blogsContainer}>

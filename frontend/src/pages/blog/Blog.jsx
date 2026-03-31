@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar";
+import SEO from "../../components/seo/SEO";
 import styles from "./Blog.module.css";
 
 const Blog = () => {
@@ -113,8 +114,57 @@ const Blog = () => {
     );
   }
 
+  const articleJsonLd = blog ? {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": blog.title,
+    "image": [blog.coverImage],
+    "datePublished": blog.createdAt,
+    "dateModified": blog.updatedAt || blog.createdAt,
+    "author": [{
+      "@type": "Organization",
+      "name": "Sequorr",
+      "url": "https://sequorr.com"
+    }]
+  } : null;
+
+  const breadcrumbSchema = blog ? {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sequorr.com"
+    }, {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blogs",
+        "item": "https://sequorr.com/blogs"
+    }, {
+        "@type": "ListItem",
+        "position": 3,
+        "name": blog.title
+    }]
+  } : null;
+
   return (
     <section className={styles.blogSection}>
+      {blog && (
+        <SEO 
+          title={blog.title} 
+          description={blog.description || `Read ${blog.title} on Sequorr`}
+          type="article"
+          url={`https://sequorr.com/blog/${slug}`}
+        >
+          <script type="application/ld+json">
+            {JSON.stringify(articleJsonLd)}
+          </script>
+          <script type="application/ld+json">
+            {JSON.stringify(breadcrumbSchema)}
+          </script>
+        </SEO>
+      )}
       <Navbar />
       <div className={styles.topNavigation}>
         <button

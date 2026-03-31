@@ -20,6 +20,7 @@ import JoinButton from '../../components/joinButton/JoinButton'
 import SectionHeader from '../../components/sectionHeader/SectionHeader'
 import Hero from '../../components/hero/Hero'
 import ExploreFindrr from '../../components/exploreFindrr/ExploreFindrr'
+import SEO from '../../components/seo/SEO'
 
 const About = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -36,6 +37,11 @@ const About = () => {
 
     return (
         <>
+            <SEO 
+                title="About Us" 
+                description="Sequorr is a community-based fitness app created to make movement feel social, motivating, and sustainable for everyday people."
+                url="https://sequorr.com/about"
+            />
             <Navbar />
             
             <div className={styles.aboutContainer}>

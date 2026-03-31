@@ -1,7 +1,7 @@
 .blogCard {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    text-decoration: none;
+    color: inherit;
+    display: block;
     cursor: pointer;
     position: relative;
     flex: 1 1 300px;
@@ -11,15 +11,19 @@
     overflow: hidden;
     border: 2px solid black;
     transition: var(--transition-smooth);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 12px;
-    padding: 20px;
 }
 
-.blogCard::before {
-    content: '';
+.cardImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.cardOverlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -27,6 +31,19 @@
     bottom: 0;
     background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.1) 100%);
     z-index: 1;
+}
+
+.cardContent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 20px;
+    z-index: 2;
 }
 
 .blogCard:hover {

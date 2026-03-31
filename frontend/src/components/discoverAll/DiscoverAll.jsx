@@ -126,8 +126,22 @@ const DiscoverAll = () => {
     }
   };
 
+  const itemListSchema = blogs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": blogs.map((blog, idx) => ({
+      "@type": "ListItem",
+      "position": idx + 1,
+      "url": `https://sequorr.com/blog/${blog.slug}`,
+      "name": blog.title
+    }))
+  } : null;
+
   return (
     <section id="discover-all" className={styles.discoverAllSection}>
+      {itemListSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
+      )}
       <div className={styles.header}>
         <h2 className={`${styles.title} reveal`}>Discover All</h2>
       </div>

@@ -3,7 +3,10 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  useLocation
 } from "react-router-dom";
+import { useEffect } from "react";
+import { initGA, logPageView } from "./utils/analytics";
 import { Toaster } from "react-hot-toast";
 
 import { lazy, Suspense } from "react";
@@ -19,6 +22,20 @@ const FindrrMap = lazy(() => import("./pages/findrr/FindrrMap"));
 import Loading from "./components/loading/Loading";
 import { ModalProvider } from "./context/ModalContext";
 import JoinTheMovement from "./components/joinTheMovement/JoinTheMovement";
+
+function RouteTracker() {
+  const location = useLocation();
+
+  useEffect(() => {
+    initGA();
+  }, []);
+
+  useEffect(() => {
+    logPageView(location.pathname + location.search);
+  }, [location]);
+
+  return null;
+}
 
 function App() {
   return (
@@ -67,6 +84,7 @@ function App() {
         }}
       />
       <Router>
+        <RouteTracker />
         <Suspense fallback={<Loading />}>
           <Routes>
             <Route path="/" element={<Home />} />

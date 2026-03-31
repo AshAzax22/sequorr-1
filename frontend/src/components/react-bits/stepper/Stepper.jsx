@@ -1,4 +1,4 @@
-import React, { useState, Children, useRef, useLayoutEffect } from 'react';
+import React, { useState, Children, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
 import './Stepper.css';
@@ -158,8 +158,12 @@ function StepContentWrapper({ isCompleted, currentStep, direction, children, cla
 function SlideTransition({ children, direction, onHeightReady }) {
   const containerRef = useRef(null);
 
-  useLayoutEffect(() => {
-    if (containerRef.current) onHeightReady(containerRef.current.offsetHeight);
+  useEffect(() => {
+    if (containerRef.current) {
+      requestAnimationFrame(() => {
+        if (containerRef.current) onHeightReady(containerRef.current.offsetHeight);
+      });
+    }
   }, [children, onHeightReady]);
 
   return (

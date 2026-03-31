@@ -7,6 +7,7 @@ import { getRaces, getRaceFilters } from '../../api/races.js';
 import CustomSelect from '../../components/FindrrMap/CustomSelect';
 import Spinner from '../../components/FindrrMap/Spinner';
 import Toast from '../../components/FindrrMap/Toast.jsx';
+import SEO from '../../components/seo/SEO';
 import styles from './FindrrMap.module.css';
 import './findrr-theme.css';
 
@@ -386,6 +387,11 @@ const FindrrMap = () => {
 
   return (
     <div className={styles.page}>
+      <SEO 
+          title="Findrr Map" 
+          description="Discover fitness events, running races, and community meetups happening around you with the Sequorr Findrr interactive map."
+          url="https://sequorr.com/findrr"
+      />
       {toast && <Toast {...toast} onClose={() => setToast(null)} />}
       
       {/* Desktop Sidebar Toggle */}
@@ -530,7 +536,7 @@ const FindrrMap = () => {
                     onClick={() => selectRace(race)}
                   >
                     <div className={styles.raceCardHeader}>
-                      {race.logo_url && <img src={race.logo_url} alt="" className={styles.raceLogo} />}
+                      {race.logo_url && <img src={race.logo_url} alt="" className={styles.raceLogo} width="48" height="48" loading="lazy" />}
                       <div className={styles.raceNameArea}>
                         <h4 className={styles.raceName}>{race.name}</h4>
                         <div className={styles.metaItem}>
@@ -623,7 +629,7 @@ const FindrrMap = () => {
                     <div className={styles.popupHorizontal}>
                       <div className={styles.popupLogoSide}>
                         {race.logo_url ? (
-                          <img src={race.logo_url} alt="" className={styles.popupLogo} />
+                          <img src={race.logo_url} alt="" className={styles.popupLogo} width="48" height="48" loading="lazy" />
                         ) : (
                           <div className={styles.popupLogoPlaceholder}>
                             <MapPin size={24} />

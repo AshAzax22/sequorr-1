@@ -5,6 +5,7 @@ import Stepper, { Step } from '../react-bits/stepper/Stepper';
 import styles from './JoinTheMovement.module.css';
 import { toast } from 'react-hot-toast';
 import Logo from '../../assets/navbar/wordmark.svg';
+import { logEvent } from '../../utils/analytics';
 
 const ICONS = {
     beginners: (
@@ -145,6 +146,14 @@ const JoinTheMovement = () => {
 
             if (response.ok || data.success === true) {
                 toast.success(data.message || 'You have been added to the waitlist! 🎉', { id: loadingToast });
+                
+                // Track Waitlist Registration
+                logEvent({
+                    category: 'Waitlist',
+                    action: 'Joined',
+                    label: goalLabels[formData.goal] || formData.goal
+                });
+
                 setCompleted(true);
                 setSubmissionError(null);
             } else {
